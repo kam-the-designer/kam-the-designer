@@ -2,459 +2,2445 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kam The Designer – Designs That Speak Loudly</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kam The Designer – Designs That Speak Loudly</title>
+  <meta name="description"
+    content="Kamleshwar Sharma – Kam The Designer. 12+ years of professional graphic design: branding, print, social media, packaging & more." />
 
-    <!-- Meta Tags -->
-    <meta name="description"
-        content="Kam The Designer is a creative brand offering professional graphic design, branding, and print solutions. Let your brand speak loudly." />
+  <link rel="icon" type="image/x-icon" href="Kam The Designer - Logo.png">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="Kam The Designer - Logo.png" />
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+    rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-    <!-- Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap"
-        rel="stylesheet">
+  <style>
+    /* ==============================
+   CSS VARIABLES & RESET
+============================== */
+    :root {
+      --navy: #000066;
+      --navy-dark: #00004d;
+      --royal: #1E3A8A;
+      --electric: #3B82F6;
+      --gold: #F59E0B;
+      --orange: #FF6B00;
+      --white: #FFFFFF;
+      --off-white: #F8FAFC;
+      --light-bg: #EEF2FF;
+      --charcoal: #1E293B;
+      --muted: #64748B;
+      --border: #E2E8F0;
+      --glass-bg: rgba(255, 255, 255, 0.12);
+      --glass-border: rgba(255, 255, 255, 0.20);
+      --shadow-sm: 0 4px 16px rgba(0, 0, 102, 0.08);
+      --shadow-md: 0 8px 32px rgba(0, 0, 102, 0.14);
+      --shadow-lg: 0 20px 60px rgba(0, 0, 102, 0.18);
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+      --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="style.css" />
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--charcoal);
+      background: var(--white);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, rgba(0, 0, 102, 0.1), rgba(59, 130, 246, 0.12));
+      color: var(--navy);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 40px;
+      border: 1px solid rgba(0, 0, 102, 0.15);
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 620px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    /* ==============================
+   BUTTONS
+============================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      border-radius: 50px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all var(--transition);
+      text-transform: uppercase;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--navy), var(--electric));
+      color: var(--white);
+      box-shadow: 0 6px 24px rgba(0, 0, 102, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(0, 0, 102, 0.45);
+      background: linear-gradient(135deg, var(--navy-dark), var(--royal));
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--orange), var(--gold));
+      color: var(--white);
+      box-shadow: 0 6px 24px rgba(255, 107, 0, 0.35);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(255, 107, 0, 0.45);
+    }
+
+    .btn-outline {
+      border-color: var(--navy);
+      color: var(--navy);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--navy);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--navy);
+      border-color: var(--white);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-white:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+    }
+
+    /* ==============================
+   NAVBAR
+============================== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 20px 0;
+      background: transparent;
+      transition: all var(--transition);
+    }
+
+    .navbar.scrolled {
+      background: rgba(0, 0, 77, 0.97);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 12px 0;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .logo-text span {
+      color: var(--gold);
+    }
+
+    .logo-img {
+      height: 70px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: all var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.4rem;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 8px;
+      transition: background var(--transition);
+    }
+
+    .menu-toggle:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* ==============================
+   HERO SECTION
+============================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--navy-dark);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #00004d 0%, #000099 40%, #1E3A8A 70%, #0f2460 100%);
+    }
+
+    /* Animated blobs */
+    .hero-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+      animation: blobFloat 8s ease-in-out infinite;
+    }
+
+    .hero-blob-1 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, #3B82F6, transparent);
+      top: -100px;
+      right: -100px;
+      animation-delay: 0s;
+    }
+
+    .hero-blob-2 {
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, #F59E0B, transparent);
+      bottom: -80px;
+      left: 10%;
+      animation-delay: 3s;
+    }
+
+    .hero-blob-3 {
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, #FF6B00, transparent);
+      top: 50%;
+      right: 20%;
+      animation-delay: 5s;
+    }
+
+    @keyframes blobFloat {
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+      }
+
+      33% {
+        transform: translateY(-30px) scale(1.05);
+      }
+
+      66% {
+        transform: translateY(20px) scale(0.97);
+      }
+    }
+
+    /* Grid pattern overlay */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 120px 0 80px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 40px;
+      margin-bottom: 28px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: scale(1.4);
+      }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.08;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 .accent {
+      color: transparent;
+      -webkit-text-stroke: 2px var(--gold);
+    }
+
+    .hero h1 .gold {
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 560px;
+      margin-bottom: 44px;
+      line-height: 1.7;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      border-left: 3px solid var(--gold);
+      padding-left: 16px;
+    }
+
+    .hero-stat .num {
+      display: block;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .hero-stat .label {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: bounce 2s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    .scroll-indicator i {
+      font-size: 1.2rem;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateX(-50%) translateY(0);
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(8px);
+      }
+    }
+
+    /* ==============================
+   ABOUT SECTION
+============================== */
+    .about {
+      padding: 100px 0;
+      background: var(--off-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.06), transparent);
+      pointer-events: none;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .about-image-wrap {
+      position: relative;
+    }
+
+    .about-image-frame {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      background: var(--border);
+      aspect-ratio: 4/5;
+    }
+
+    .about-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Placeholder when no photo */
+    .about-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--light-bg), #dde8ff);
+      color: var(--navy);
+      gap: 12px;
+    }
+
+    .about-placeholder i {
+      font-size: 4rem;
+      opacity: 0.3;
+    }
+
+    .about-placeholder span {
+      font-size: 0.9rem;
+      font-weight: 600;
+      opacity: 0.5;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: linear-gradient(135deg, var(--navy), var(--electric));
+      color: var(--white);
+      border-radius: var(--radius-md);
+      padding: 20px 28px;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+    }
+
+    .about-badge .big {
+      font-size: 2.4rem;
+      font-weight: 900;
+      font-family: 'Montserrat', sans-serif;
+      display: block;
+      line-height: 1;
+    }
+
+    .about-badge .small {
+      font-size: 0.72rem;
+      font-weight: 600;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .about-text .section-title {
+      text-align: left;
+    }
+
+    .about-text .section-subtitle {
+      text-align: left;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 0.98rem;
+    }
+
+    .about-text p strong {
+      color: var(--charcoal);
+      font-weight: 600;
+    }
+
+    .about-text p em {
+      color: var(--navy);
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 28px 0;
+    }
+
+    .about-tag {
+      background: var(--light-bg);
+      color: var(--navy);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 40px;
+      border: 1px solid rgba(0, 0, 102, 0.12);
+    }
+
+    .about-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* ==============================
+   SKILLS SECTION
+============================== */
+    .skills {
+      padding: 100px 0;
+      background: var(--white);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .skill-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 36px 28px;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+    }
+
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--navy), var(--electric));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+
+    .skill-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .skill-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(0, 0, 102, 0.15);
+    }
+
+    .skill-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: var(--radius-sm);
+      background: var(--light-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+      color: var(--navy);
+      transition: all var(--transition);
+    }
+
+    .skill-card:hover .skill-icon {
+      background: linear-gradient(135deg, var(--navy), var(--electric));
+      color: var(--white);
+      transform: scale(1.08);
+    }
+
+    .skill-card h3 {
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .skill-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Software skills sub-section */
+    .software-skills {
+      padding: 80px 0;
+      background: var(--light-bg);
+    }
+
+    .software-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+
+    .software-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition);
+    }
+
+    .software-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .software-card img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      margin: 0 auto 12px;
+    }
+
+    .software-card h4 {
+      font-size: 0.82rem;
+      color: var(--navy);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .software-card p {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* ==============================
+   SERVICES SECTION
+============================== */
+    .services {
+      padding: 100px 0;
+      background: var(--white);
+      position: relative;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px 22px;
+      text-align: center;
+      transition: all var(--transition);
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--navy), var(--electric));
+      opacity: 0;
+      transition: opacity var(--transition);
+      z-index: 0;
+    }
+
+    .service-card:hover::after {
+      opacity: 1;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      border-color: transparent;
+    }
+
+    .service-card>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: var(--light-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 1.3rem;
+      color: var(--navy);
+      transition: all var(--transition);
+    }
+
+    .service-card:hover .service-icon {
+      background: rgba(255, 255, 255, 0.2);
+      color: var(--white);
+    }
+
+    .service-card h3 {
+      font-size: 0.88rem;
+      color: var(--navy);
+      font-weight: 700;
+      transition: color var(--transition);
+    }
+
+    .service-card:hover h3 {
+      color: var(--white);
+    }
+
+    .service-card p {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 6px;
+      transition: color var(--transition);
+    }
+
+    .service-card:hover p {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* ==============================
+   PORTFOLIO SECTION
+============================== */
+    .portfolio {
+      padding: 100px 0;
+      background: var(--off-white);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 48px;
+    }
+
+    .portfolio-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      background: var(--border);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.08);
+    }
+
+    /* Placeholder for portfolio */
+    .portfolio-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      gap: 10px;
+    }
+
+    .portfolio-placeholder i {
+      font-size: 2.5rem;
+      opacity: 0.7;
+    }
+
+    .portfolio-placeholder span {
+      font-size: 0.85rem;
+      font-weight: 600;
+      opacity: 0.8;
+    }
+
+    .portfolio-item:nth-child(1) .portfolio-placeholder {
+      background: linear-gradient(135deg, #000066, #1E3A8A);
+    }
+
+    .portfolio-item:nth-child(2) .portfolio-placeholder {
+      background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+    }
+
+    .portfolio-item:nth-child(3) .portfolio-placeholder {
+      background: linear-gradient(135deg, #FF6B00, #F59E0B);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 77, 0.92) 0%, rgba(0, 0, 77, 0.5) 50%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      transform: translateY(0);
+    }
+
+    .portfolio-overlay h4 {
+      color: var(--white);
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+
+    .portfolio-overlay span {
+      font-size: 0.78rem;
+      color: var(--gold);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .portfolio-overlay .btn-sm {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 8px 18px;
+      border-radius: 40px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all var(--transition);
+    }
+
+    .portfolio-overlay .btn-sm:hover {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .portfolio-footer {
+      text-align: center;
+    }
+
+    /* ==============================
+   TESTIMONIALS SECTION
+============================== */
+    .testimonials {
+      padding: 100px 0;
+      background: linear-gradient(135deg, var(--navy-dark) 0%, #00007a 50%, var(--royal) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonials::before {
+      content: '\201C';
+      position: absolute;
+      top: -20px;
+      left: 5%;
+      font-size: 28rem;
+      font-family: 'Playfair Display', serif;
+      color: rgba(255, 255, 255, 0.04);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .testimonials .section-tag {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--gold);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .testimonials .section-title {
+      color: var(--white);
+    }
+
+    .testimonials .section-subtitle {
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .testimonial-slider {
+      max-width: 840px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .testimonial {
+      display: none;
+    }
+
+    .testimonial.active {
+      display: block;
+      animation: fadeSlide 0.5s ease;
+    }
+
+    @keyframes fadeSlide {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius-lg);
+      padding: 48px 52px;
+      text-align: center;
+    }
+
+    .testimonial-stars {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin-bottom: 24px;
+    }
+
+    .testimonial-stars i {
+      color: var(--gold);
+      font-size: 1.1rem;
+    }
+
+    .testimonial-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.12rem;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.75;
+      margin-bottom: 36px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .testimonial-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--gold);
+      background: var(--light-bg);
+    }
+
+    .testimonial-avatar-placeholder {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--electric), var(--navy));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid var(--gold);
+      flex-shrink: 0;
+    }
+
+    .testimonial-avatar-placeholder i {
+      color: var(--white);
+      font-size: 1.4rem;
+    }
+
+    .testimonial-info {
+      text-align: left;
+    }
+
+    .testimonial-info h4 {
+      color: var(--white);
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+
+    .testimonial-info span {
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .testimonial-navigation {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .testimonial-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition);
+    }
+
+    .testimonial-btn:hover {
+      background: var(--white);
+      color: var(--navy);
+      border-color: var(--white);
+    }
+
+    .testimonial-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .dot.active {
+      background: var(--gold);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* ==============================
+   CONTACT SECTION
+============================== */
+    .contact {
+      padding: 100px 0;
+      background: var(--off-white);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-info h3 {
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .contact-info p {
+      color: var(--muted);
+      margin-bottom: 36px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .contact-item-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: var(--radius-sm);
+      background: var(--light-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+
+    .contact-item-text strong {
+      display: block;
+      color: var(--charcoal);
+      font-size: 0.9rem;
+      margin-bottom: 2px;
+    }
+
+    .contact-item-text a,
+    .contact-item-text span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .contact-item-text a:hover {
+      color: var(--navy);
+    }
+
+    .contact-form-wrap {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 48px 44px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-form-wrap h3 {
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .contact-form-wrap p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 32px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 14px 18px;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      color: var(--charcoal);
+      background: var(--off-white);
+      transition: all var(--transition);
+      outline: none;
+    }
+
+    .form-group textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--navy);
+      background: var(--white);
+      box-shadow: 0 0 0 4px rgba(0, 0, 102, 0.08);
+    }
+
+    .form-group input.error,
+    .form-group textarea.error {
+      border-color: #EF4444;
+      box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+    }
+
+    .form-submit-row {
+      margin-top: 8px;
+    }
+
+    /* ==============================
+   FOOTER
+============================== */
+    .footer {
+      background: linear-gradient(135deg, #00004d 0%, #000088 60%, #1E3A8A 100%);
+      color: var(--white);
+      padding: 80px 0 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.12), transparent);
+      pointer-events: none;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 60px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
+
+    .footer-brand-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.6rem;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .footer-brand-name span {
+      color: var(--gold);
+    }
+
+    .footer-tagline {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 20px;
+    }
+
+    .footer-desc {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-link {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1rem;
+      transition: all var(--transition);
+    }
+
+    .social-link:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+
+    .footer-col h4 {
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 24px;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-col ul li a {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+      transition: color var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-col ul li a::before {
+      content: '→';
+      opacity: 0;
+      transition: opacity var(--transition);
+      margin-right: -6px;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--white);
+    }
+
+    .footer-col ul li a:hover::before {
+      opacity: 1;
+    }
+
+    .footer-bottom {
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom p {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .footer-bottom .credit {
+      color: rgba(255, 255, 255, 0.45);
+      font-size: 0.82rem;
+    }
+
+    .footer-bottom .credit span {
+      color: var(--gold);
+    }
+
+    /* ==============================
+   FLOATING BUTTONS
+============================== */
+    .float-btns {
+      position: fixed;
+      bottom: 32px;
+      right: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 999;
+    }
+
+    .float-btn {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      cursor: pointer;
+      transition: all var(--transition);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+      border: none;
+      text-decoration: none;
+    }
+
+    .float-btn:hover {
+      transform: scale(1.12) translateY(-2px);
+    }
+
+    .float-wa {
+      background: #25D366;
+      color: var(--white);
+    }
+
+    .float-hire {
+      background: linear-gradient(135deg, var(--orange), var(--gold));
+      color: var(--white);
+      font-size: 0.6rem;
+      font-weight: 800;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.02em;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .float-top {
+      background: var(--navy);
+      color: var(--white);
+      opacity: 0;
+      pointer-events: none;
+      transition: all var(--transition);
+    }
+
+    .float-top.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* ==============================
+   SECTION DIVIDER
+============================== */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+
+    .logoktd {
+      height: 70px;
+      width: auto;
+      object-fit: contain;
+      transition: all var(--transition);
+      filter: brightness(0) invert(1);
+      /* Makes logo white to match navbar */
+    }
+
+    .logoktd:hover {
+      transform: scale(1.02);
+      filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 215, 0, 0.3));
+    }
+
+    /* Responsive adjustment for mobile */
+    @media (max-width: 768px) {
+      .logoktd {
+        height: 55px;
+      }
+    }
+
+    /* ==============================
+   RESPONSIVE
+============================== */
+    @media (max-width: 1024px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .software-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .about-image-wrap {
+        max-width: 420px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 77, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        clip-path: circle(0% at 95% 5%);
+        transition: clip-path 0.5s ease;
+      }
+
+      .nav-links.open {
+        clip-path: circle(150% at 95% 5%);
+      }
+
+      .nav-links a {
+        font-size: 1.1rem;
+        padding: 12px 24px;
+      }
+
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .hero-stats {
+        gap: 28px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .software-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .testimonial-card {
+        padding: 32px 28px;
+      }
+
+      .contact-form-wrap {
+        padding: 32px 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .software-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .about-ctas {
+        flex-direction: column;
+      }
+
+      .hero-stats {
+        gap: 20px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="navbar">
-        <div class="container">
-            <div class="logo">
-                <img src="Kam The Designer - Logo.png" alt="Kam The Designer Logo" />
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-            </nav>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="#home" class="logo-text">
+        <img src="Kam The Designer - Logo.png" alt="KTD Logo" class="logoktd">
+      </a>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="hero-blob hero-blob-3"></div>
+    <div class="hero-grid"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <i class="fas fa-palette"></i>&nbsp; Graphic Designer &amp; Brand Identity Expert
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Designs That Speak Loudly</h1>
-            <p>From Imagination to Impact – Creative Graphic Design that Delivers</p>
-            <a href="#contact" class="btn">Let's Work Together</a>
+        <h1>
+          Designs That<br>
+          <span class="gold">Speak</span> <span class="accent">Loudly</span>
+        </h1>
+        <p class="hero-sub">From Imagination to Impact – Creative Graphic Design that Delivers results, builds trust,
+          and makes your brand unforgettable.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-gold">
+            <i class="fas fa-paper-plane"></i> Let's Work Together
+          </a>
+          <a href="#portfolio" class="btn btn-white">
+            <i class="fas fa-eye"></i> View Portfolio
+          </a>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2>About Kamleshwar Sharma</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="Kamleshwar Sharma Image.jpg" alt="Kamleshwar Sharma" />
-                </div>
-                <div class="about-text">
-                    <p>I'm <strong>Kamleshwar Sharma</strong>, the creative force behind <em>Kam The Designer</em> — a
-                        graphic design professional with over <strong>12 years of experience</strong> in turning ideas
-                        into meaningful visuals. I don't just design; I build identities that speak, sell, and stick.
-                    </p>
-
-                    <p>From startups to established brands, I've partnered with businesses across industries — real
-                        estate, fashion, beauty, retail, and more — helping them visually communicate with clarity and
-                        impact. Whether it's a sleek social media post, a bold logo, or eye-catching packaging, every
-                        design I create is rooted in strategy and shaped by creativity.</p>
-
-                    <p>I'm fluent in the industry's top design tools — <strong>Adobe Illustrator</strong>,
-                        <strong>Photoshop</strong>, <strong>CorelDRAW</strong>, and <strong>Canva</strong> — allowing me
-                        to deliver tailor-made solutions that are not only beautiful but purposeful.
-                    </p>
-
-                    <p><strong>Let's build something impactful — together.</strong></p>
-                    <div class="about-links">
-                        <a href="https://www.linkedin.com/in/kamleshwar-sharma-b8695675/" class="btn">View LinkedIn
-                            Profile</a>
-                        <a href="Kamleshwar_Creative-Lead.pdf" class="btn">View My CV</a>
-                        <a href="Kamleshwar_Creative-Lead.pdf" class="btn" download="">Download My CV</a>
-                    </div>
-                </div>
-            </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="num">12+</span>
+            <span class="label">Years Experience</span>
+          </div>
+          <div class="hero-stat">
+            <span class="num">500+</span>
+            <span class="label">Projects Done</span>
+          </div>
+          <div class="hero-stat">
+            <span class="num">100+</span>
+            <span class="label">Happy Clients</span>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <i class="fas fa-chevron-down"></i>
+      <span>Scroll</span>
+    </div>
+  </section>
 
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <h2>Our Skills</h2>
-            <p>At <strong>Kam The Designer</strong>, we blend creativity with strategy to deliver design
-                solutions that are not only visually stunning but also business-focused. From building brand
-                identities to crafting digital content that performs — we do it all with passion and precision.
-            </p>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <img src="https://img.icons8.com/external-smashingstocks-mixed-smashing-stocks/68/external-branding-digital-marketing-smashingstocks-mixed-smashing-stocks.png"
-                        alt="Branding Icon" />
-                    <h3>Branding & Logo Design</h3>
-                    <p>Creating memorable brand identities, including logos, typography, color palettes, and
-                        brand guides that reflect your vision.</p>
-                </div>
-
-                <div class="skill-item">
-                    <img src="https://img.icons8.com/color/68/instagram-new--v1.png" alt="Social Media Icon">
-                    <h3>SM Post & Ad Design</h3>
-                    <p>Designing high-impact visuals for Instagram, Facebook, LinkedIn, and more — customized
-                        for engagement and growth.</p>
-                </div>
-
-                <div class="skill-item">
-                    <img src="https://img.icons8.com/color/68/print.png" alt="Print Icon">
-                    <h3>Print & Marketing Collateral</h3>
-                    <p>Flyers, brochures, posters, business cards, and more — professionally designed to leave a
-                        lasting impression offline.</p>
-                </div>
-
-                <div class="skill-item">
-                    <img src="https://img.icons8.com/fluency/68/box.png" alt="Packaging Icon">
-                    <h3>Packaging Design</h3>
-                    <p>Attractive and functional packaging solutions that enhance shelf appeal and boost your
-                        product's market value.</p>
-                </div>
-
-                <div class="skill-item">
-                    <img src="https://img.icons8.com/color/68/ms-powerpoint.png" alt="Presentation Icon">
-                    <h3>Proposal & Presentation Design</h3>
-                    <p>Corporate profiles, pitch decks, and presentations that tell your story with clarity and
-                        confidence.</p>
-                </div>
-
-                <div class="skill-item">
-                    <img src="https://img.icons8.com/color/68/adobe-illustrator.png" alt="Design Tools Icon">
-                    <h3>Design Software Proficiency</h3>
-                    <p>Expert in Adobe Illustrator, Photoshop, CorelDRAW, Canva, Figma — delivering high-quality
-                        designs across formats.</p>
-                </div>
-            </div>
+  <!-- ========== ABOUT ========== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrap">
+          <div class="about-image-frame">
+            <img src="Kamleshwar Sharma Image.jpg" alt="Kamleshwar Sharma" loading="lazy"
+              onerror="this.parentElement.innerHTML='<div class=\'about-placeholder\'><i class=\'fas fa-user-tie\'></i><span>Kamleshwar Sharma</span></div>'">
+          </div>
+          <div class="about-badge">
+            <span class="big">12+</span>
+            <span class="small">Years of<br>Excellence</span>
+          </div>
         </div>
-    </section>
-
-    <!-- Software Skills Section -->
-    <section class="software-skills">
-        <div class="container">
-            <h2>Design Software Expertise</h2>
-            <p>I work confidently across industry-standard tools to deliver stunning visuals for every format —
-                from print to digital, motion to mockup.</p>
-
-            <div class="software-grid">
-                <div class="software-item">
-                    <img src="https://img.icons8.com/color/96/adobe-illustrator.png" alt="Adobe Illustrator" />
-                    <h3>Adobe Illustrator (AI)</h3>
-                    <p>Vector logos, illustrations, brand elements.</p>
-                </div>
-
-                <div class="software-item">
-                    <img src="https://img.icons8.com/color/96/adobe-photoshop.png" alt="Adobe Photoshop" />
-                    <h3>Adobe Photoshop (PS)</h3>
-                    <p>Photo editing, mockups, digital art.</p>
-                </div>
-
-                <div class="software-item">
-                    <img src="https://img.icons8.com/color/96/adobe-indesign.png" alt="Adobe InDesign" />
-                    <h3>Adobe InDesign (ID)</h3>
-                    <p>Brochures, magazines, layouts.</p>
-                </div>
-
-                <div class="software-item">
-                    <img src="https://img.icons8.com/color/96/adobe-premiere-pro.png" alt="Premiere Pro" />
-                    <h3>Premiere Pro (PR)</h3>
-                    <p>Video editing for reels, ads, brand promos.</p>
-                </div>
-
-                <div class="software-item">
-                    <img src="https://img.icons8.com/color/96/adobe-after-effects.png" alt="After Effects" />
-                    <h3>After Effects (AE)</h3>
-                    <p>Motion graphics, animated intros, transitions.</p>
-                </div>
-
-                <div class="software-item">
-                    <img src="https://img.icons8.com/color/96/coreldraw.png" alt="CorelDRAW" />
-                    <h3>CorelDRAW (CDR)</h3>
-                    <p>Print design, packaging, signage layouts.</p>
-                </div>
-
-                <div class="software-item">
-                    <img src="https://img.icons8.com/color/96/canva.png" alt="Canva" />
-                    <h3>Canva</h3>
-                    <p>Quick content design for social media & marketing.</p>
-                </div>
-
-                <div class="software-item">
-                    <img src="https://img.icons8.com/color/96/microsoft-word-2019--v1.png" alt="MS Word" />
-                    <h3>MS Word</h3>
-                    <p>Documents, reports, proposals, formatting.</p>
-                </div>
-
-                <div class="software-item">
-                    <img src="https://img.icons8.com/color/96/microsoft-excel-2019--v1.png" alt="MS Excel" />
-                    <h3>MS Excel</h3>
-                    <p>Data handling, charts, reports, templates.</p>
-                </div>
-
-                <div class="software-item">
-                    <img src="https://img.icons8.com/color/96/microsoft-powerpoint-2019--v1.png" alt="MS PowerPoint" />
-                    <h3>MS PowerPoint</h3>
-                    <p>Presentations, animations, pitch decks.</p>
-                </div>
-
-                <div class="software-item">
-                    <img width="96" height="96" src="https://img.icons8.com/fluency/96/wordpress.png" alt="wordpress" />
-                    <h3>WordPress</h3>
-                    <p>Websites for Clients.</p>
-                </div>
-
-                <div class="software-item">
-                    <img width="96" height="96" src="https://img.icons8.com/fluency/96/blender-3d.png"
-                        alt="blender-3d" />
-                    <h3>Blender</h3>
-                    <p>3d Animations, Video Edits.</p>
-                </div>
-            </div>
+        <div class="about-text">
+          <span class="section-tag">About Me</span>
+          <h2 class="section-title">Kamleshwar Sharma</h2>
+          <p class="section-subtitle" style="text-align:left;margin-bottom:20px;">The creative force behind <em>Kam The
+              Designer</em></p>
+          <p>I'm <strong>Kamleshwar Sharma</strong>, a graphic design professional with over <strong>12 years of
+              experience</strong> in turning ideas into meaningful visuals. I don't just design — I build identities
+            that speak, sell, and stick.</p>
+          <p>From startups to established brands, I've partnered with businesses across industries — <strong>real
+              estate, fashion, beauty, retail</strong>, and more — helping them communicate with clarity and impact.
+            Whether it's a sleek social media post, a bold logo, or eye-catching packaging, every design I create is
+            rooted in strategy and shaped by creativity.</p>
+          <p>I'm fluent in the industry's top tools — <strong>Adobe Illustrator, Photoshop, CorelDRAW, Canva &amp;
+              Figma</strong> — delivering tailor-made solutions that are not only beautiful but purposeful.</p>
+          <div class="about-tags">
+            <span class="about-tag">Brand Identity</span>
+            <span class="about-tag">Print Design</span>
+            <span class="about-tag">Social Media Graphics</span>
+            <span class="about-tag">Packaging Design</span>
+            <span class="about-tag">Digital Marketing</span>
+            <span class="about-tag">Presentation Design</span>
+          </div>
+          <div class="about-ctas">
+            <a href="https://www.linkedin.com/in/kamleshwar-sharma-b8695675/" target="_blank" class="btn btn-primary">
+              <i class="fab fa-linkedin"></i> LinkedIn Profile
+            </a>
+            <a href="Kamleshwar_Creative-Lead.pdf" target="_blank" class="btn btn-outline">
+              <i class="fas fa-eye"></i> View CV
+            </a>
+            <a href="Kamleshwar_Creative-Lead.pdf" download class="btn btn-outline">
+              <i class="fas fa-download"></i> Download CV
+            </a>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2>My Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>SM Post & Ad Design</h3>
-                    <p>Engaging and branded visuals for all your platforms.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Logo & Branding</h3>
-                    <p>Memorable brand identities with impact.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Print & Packaging</h3>
-                    <p>Flyers, brochures, and product packaging that sells.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Posters & Banners</h3>
-                    <p>Large format designs that grab attention.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Proposal Design</h3>
-                    <p>Professional business profiles, pitch decks, and tender documents that present your
-                        company with impact and clarity.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Brochure Design</h3>
-                    <p>Elegant and professional brochures designed for marketing, real estate, product showcase,
-                        and company profiles — both digital and print-ready.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Reel Thumbnails & Video Covers</h3>
-                    <p>Attractive thumbnails for YouTube, Instagram, Facebook Reels that boost clicks and
-                        visibility.</p>
-                </div>
-                <div class="service-card">
-                    <h3>WhatsApp & Email Creatives</h3>
-                    <p>Clean and clear creatives for promotions, festival greetings, and offers — optimized for
-                        mobile sharing.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Digital Invitation Design</h3>
-                    <p>Personal and corporate invitation designs for weddings, events, parties, openings —
-                        modern & customizable.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Event Branding & Backdrop Design</h3>
-                    <p>Stall panels, stage backdrops, standees, and welcome boards for exhibitions, conferences,
-                        and corporate events.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Menu & Rate Card Design</h3>
-                    <p>For restaurants, salons, spas, and services — functional and stylish menus, pricelists,
-                        and tabletop cards.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Infographic & Process Design</h3>
-                    <p>Visual explanations of your services, workflow, business process, or data — easy to
-                        understand and share.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Billboard & Hoarding Design</h3>
-                    <p>High-resolution outdoor advertising layouts for local, highway, or urban branding
-                        campaigns.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Magazine & Catalogue Design</h3>
-                    <p>Product catalogues, corporate magazines, and multi-page booklets that are editorially
-                        sharp and visually balanced.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Resume Design</h3>
-                    <p>Modern personal resumes — especially for professionals, freelancers, and
-                        artists.</p>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
+  <div class="divider"></div>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-        <div class="container">
-            <h2>Portfolio</h2>
-            <p>Here are some of my latest creative works.</p>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="Branding.png" alt="Project">
-                    <div class="portfolio-overlay">
-                        <h4>Branding</h4>
-                        <a href="portfolio.html" class="btn">View More</a>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="Social Media Posts.png" alt="Project">
-                    <div class="portfolio-overlay">
-                        <h4>Social Media Posts</h4>
-                        <a href="portfolio.html" class="btn">View More</a>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="Soap Pacakaging design.png" alt="Project">
-                    <div class="portfolio-overlay">
-                        <h4>Packaging Design</h4>
-                        <a href="portfolio.html" class="btn">View More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="view-more">
-                <a href="portfolio.html" class="btn">See Full Portfolio</a>
-            </div>
+  <!-- ========== SKILLS ========== -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Expertise</span>
+        <h2 class="section-title">What I Do Best</h2>
+        <p class="section-subtitle">Blending creativity with strategy to deliver design solutions that are visually
+          stunning and business-focused.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-fingerprint"></i></div>
+          <h3>Branding &amp; Logo Design</h3>
+          <p>Creating memorable brand identities — logos, typography, color palettes, and brand guides that reflect your
+            unique vision and values.</p>
         </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <h2>What Clients Say</h2>
-            <br><br>
-            <div class="testimonial-slider">
-                <div class="testimonial active">
-                    <img src="Devdutt Kushwaha.png" alt="Devdutt Kushwaha" class="testimonial-avatar" />
-                    <div class="testimonial-content">
-                        <h4>Devdutt Kushwaha - 99 Graphics</h4>
-                        <p>"I've had the pleasure of collaborating with Kamleshwar, and the experience has been truly
-                            professional and creatively enriching. His design sense, timely delivery, and ability to
-                            bring ideas to life are commendable. Whether it's mockups, visual concepts, or brand assets,
-                            the quality and attention to detail always stand out. Looking forward to working on many
-                            more projects together."</p>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <img src="Pankaj Maurya.png" alt="Nestfinder" class="testimonial-avatar" />
-                    <div class="testimonial-content">
-                        <h4>Pankaj Maurya - Nestfinder</h4>
-                        <p>"Working with Kamleshwar Sharma has been a great experience. His designs for our real estate
-                            brand NestFinder were creative, impactful, and delivered with professionalism. He
-                            understands the real estate market well and transformed our ideas into strong visual assets
-                            that truly reflect our brand. Highly recommended for anyone looking for quality design with
-                            clarity and purpose."</p>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <img src="D.K Industries.jpg" alt="D.K Industries" class="testimonial-avatar" />
-                    <div class="testimonial-content">
-                        <h4>D.K Industries</h4>
-                        <p>"We deeply value Mr. Kamleshwar Sharma's creative leadership at Y G Estates. His
-                            innovative designs, strategic approach, and consistent quality have greatly enhanced our
-                            brand presence across all real estate and service verticals. His dedication and vision
-                            continue to play a vital role in our growth and client engagement."</p>
-                    </div>
-                </div>
-                <div class="testimonial-navigation">
-                    <button class="testimonial-prev">❮</button>
-                    <div class="testimonial-dots">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div>
-                    <button class="testimonial-next">❯</button>
-                </div>
-            </div>
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-hashtag"></i></div>
+          <h3>SM Post &amp; Ad Design</h3>
+          <p>Designing high-impact visuals for Instagram, Facebook, LinkedIn — customized for engagement, reach, and
+            brand consistency.</p>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <form action="https://formspree.io/f/xrblzzgy" method="POST" class="contact-form">
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Your Name" required />
-                </div>
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Your Email" required />
-                </div>
-                <div class="form-group">
-                    <input type="tel" name="phone" placeholder="Your Phone No." />
-                </div>
-                <div class="form-group">
-                    <textarea name="message" placeholder="Tell me about your project..." required></textarea>
-                </div>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-            <div class="contact-info">
-                <p>Email: <a href="mailto:kamleshwar83@gmail.com">kamleshwar83@gmail.com</a></p>
-                <p><a href="https://wa.me/919818706594" target="_blank">📱 WhatsApp Me</a></p>
-            </div>
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-print"></i></div>
+          <h3>Print &amp; Marketing Collateral</h3>
+          <p>Flyers, brochures, posters, business cards — professionally designed to leave a lasting offline impression.
+          </p>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <img src="Kam The Designer - Logo.png" alt="Kam The Designer Logo" class="footer-logo" />
-                    <p>Creating designs that speak volumes for your brand.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Follow Me</h4>
-                    <div class="social-icons">
-                        <a href="https://instagram.com/kam_the_designer" target="_blank"><img
-                                src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram" /></a>
-                        <a href="https://www.linkedin.com/company/kam-the-designer" target="_blank"><img
-                                src="https://img.icons8.com/color/48/linkedin.png" alt="LinkedIn" /></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 Kam The Designer. All Rights Reserved.</p>
-            </div>
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-box-open"></i></div>
+          <h3>Packaging Design</h3>
+          <p>Attractive, functional packaging solutions that enhance shelf appeal and boost your product's market value
+            dramatically.</p>
         </div>
-    </footer>
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-chalkboard-user"></i></div>
+          <h3>Proposal &amp; Presentation Design</h3>
+          <p>Corporate profiles, pitch decks, and presentations that tell your brand story with clarity, confidence and
+            impact.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+          <h3>Design Software Proficiency</h3>
+          <p>Expert in Adobe Illustrator, Photoshop, CorelDRAW, Canva, Figma — delivering high-quality designs across
+            all formats.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- Software Skills -->
+  <section class="software-skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Tools &amp; Software</span>
+        <h2 class="section-title">Design Software Expertise</h2>
+        <p class="section-subtitle">Confidently working across industry-standard tools to deliver stunning visuals for
+          every format — print to digital.</p>
+      </div>
+      <div class="software-grid">
+        <div class="software-card">
+          <img src="https://img.icons8.com/color/96/adobe-illustrator.png" alt="Adobe Illustrator" loading="lazy" />
+          <h4>Illustrator</h4>
+          <p>Vector &amp; logos</p>
+        </div>
+        <div class="software-card">
+          <img src="https://img.icons8.com/color/96/adobe-photoshop.png" alt="Adobe Photoshop" loading="lazy" />
+          <h4>Photoshop</h4>
+          <p>Photo editing</p>
+        </div>
+        <div class="software-card">
+          <img src="https://img.icons8.com/color/96/coreldraw.png" alt="CorelDRAW" loading="lazy" />
+          <h4>CorelDRAW</h4>
+          <p>Print design</p>
+        </div>
+        <div class="software-card">
+          <img src="https://img.icons8.com/color/96/canva.png" alt="Canva" loading="lazy" />
+          <h4>Canva</h4>
+          <p>Quick creatives</p>
+        </div>
+        <div class="software-card">
+          <img src="https://img.icons8.com/color/96/figma--v1.png" alt="Figma" loading="lazy" />
+          <h4>Figma</h4>
+          <p>UI &amp; prototyping</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What I Offer</span>
+        <h2 class="section-title">My Services</h2>
+        <p class="section-subtitle">A comprehensive range of design services crafted to elevate your brand across every
+          touchpoint.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-image"></i></div>
+          <h3>SM Post &amp; Ad Design</h3>
+          <p>Engaging social creatives</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-star"></i></div>
+          <h3>Logo &amp; Branding</h3>
+          <p>Complete brand identity</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-box"></i></div>
+          <h3>Print &amp; Packaging</h3>
+          <p>Shelf-ready packaging</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-rectangle-ad"></i></div>
+          <h3>Posters &amp; Banners</h3>
+          <p>Eye-catching visuals</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-file-contract"></i></div>
+          <h3>Proposal Design</h3>
+          <p>Professional proposals</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-book-open"></i></div>
+          <h3>Brochure Design</h3>
+          <p>Multi-page layouts</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-film"></i></div>
+          <h3>Reel Thumbnails</h3>
+          <p>Click-worthy covers</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fab fa-whatsapp"></i></div>
+          <h3>WhatsApp Creatives</h3>
+          <p>Campaign graphics</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-envelope-open-text"></i></div>
+          <h3>Digital Invitations</h3>
+          <p>Events &amp; celebrations</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-calendar-check"></i></div>
+          <h3>Event Branding</h3>
+          <p>Full event identity</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-utensils"></i></div>
+          <h3>Menu &amp; Rate Cards</h3>
+          <p>F&amp;B &amp; retail menus</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-chart-pie"></i></div>
+          <h3>Infographics</h3>
+          <p>Data made visual</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-rectangle-ad"></i></div>
+          <h3>Billboard Design</h3>
+          <p>Large format OOH</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-newspaper"></i></div>
+          <h3>Magazine Layout</h3>
+          <p>Editorial design</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-id-card"></i></div>
+          <h3>Resume Design</h3>
+          <p>Modern personal CVs</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PORTFOLIO ========== -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">My Work</span>
+        <h2 class="section-title">Portfolio Highlights</h2>
+        <p class="section-subtitle">A curated selection of my latest creative works — branding, social media, and
+          packaging design.</p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="Branding.png" alt="Branding Project" loading="lazy"
+            onerror="this.parentElement.innerHTML+='<div class=\'portfolio-placeholder\'><i class=\'fas fa-trademark\'></i><span>Branding Projects</span></div>';this.remove()">
+          <div class="portfolio-overlay">
+            <span>Branding Design</span>
+            <h4>Brand Identity &amp; Logos</h4>
+            <a href="portfolio.html" class="btn-sm"><i class="fas fa-arrow-right"></i> View More</a>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="Social Media Posts.png" alt="Social Media Posts" loading="lazy"
+            onerror="this.parentElement.innerHTML+='<div class=\'portfolio-placeholder\'><i class=\'fas fa-hashtag\'></i><span>Social Media Posts</span></div>';this.remove()">
+          <div class="portfolio-overlay">
+            <span>Social Media Design</span>
+            <h4>Social Media Post Designs</h4>
+            <a href="portfolio.html" class="btn-sm"><i class="fas fa-arrow-right"></i> View More</a>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="Soap Pacakaging design.png" alt="Packaging Design" loading="lazy"
+            onerror="this.parentElement.innerHTML+='<div class=\'portfolio-placeholder\'><i class=\'fas fa-box-open\'></i><span>Packaging Design</span></div>';this.remove()">
+          <div class="portfolio-overlay">
+            <span>Packaging Design</span>
+            <h4>Product Packaging &amp; Labels</h4>
+            <a href="portfolio.html" class="btn-sm"><i class="fas fa-arrow-right"></i> View More</a>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-footer">
+        <a href="portfolio.html" class="btn btn-primary">
+          <i class="fas fa-th-large"></i> View Full Portfolio
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Client Love</span>
+        <h2 class="section-title">What Clients Say</h2>
+        <p class="section-subtitle" style="color:rgba(255,255,255,0.65)">Real words from real clients who trusted me
+          with their brand.</p>
+      </div>
+      <div class="testimonial-slider" id="testimonialSlider">
+
+        <div class="testimonial active">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-quote">"I've had the pleasure of collaborating with Kamleshwar, and the experience has
+              been truly professional and creatively enriching. His design sense, timely delivery, and ability to bring
+              ideas to life are commendable. Whether it's mockups, visual concepts, or brand assets, the quality and
+              attention to detail always stand out."</p>
+            <div class="testimonial-author">
+              <img src="Devdutt Kushwaha.png" alt="Devdutt Kushwaha" class="testimonial-avatar" loading="lazy"
+                onerror="this.outerHTML='<div class=\'testimonial-avatar-placeholder\'><i class=\'fas fa-user\'></i></div>'">
+              <div class="testimonial-info">
+                <h4>Devdutt Kushwaha</h4>
+                <span>99 Graphics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-quote">"Working with Kamleshwar Sharma has been a great experience. His designs for
+              our real estate brand NestFinder were creative, impactful, and delivered with professionalism. He
+              understands the real estate market well and transformed our ideas into strong visual assets that truly
+              reflect our brand. Highly recommended!"</p>
+            <div class="testimonial-author">
+              <img src="Pankaj Maurya.png" alt="Pankaj Maurya" class="testimonial-avatar" loading="lazy"
+                onerror="this.outerHTML='<div class=\'testimonial-avatar-placeholder\'><i class=\'fas fa-user\'></i></div>'">
+              <div class="testimonial-info">
+                <h4>Pankaj Maurya</h4>
+                <span>Nestfinder</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-quote">"We deeply value Mr. Kamleshwar Sharma's creative leadership at Y G Estates.
+              His innovative designs, strategic approach, and consistent quality have greatly enhanced our brand
+              presence across all real estate and service verticals. His dedication and vision continue to play a vital
+              role in our growth."</p>
+            <div class="testimonial-author">
+              <img src="D.K Industries.jpg" alt="D.K Industries" class="testimonial-avatar" loading="lazy"
+                onerror="this.outerHTML='<div class=\'testimonial-avatar-placeholder\'><i class=\'fas fa-building\'></i></div>'">
+              <div class="testimonial-info">
+                <h4>D.K. Industries</h4>
+                <span>Manufacturing &amp; Real Estate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-navigation">
+          <button class="testimonial-btn testimonial-prev" aria-label="Previous">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="testimonial-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <button class="testimonial-btn testimonial-next" aria-label="Next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Let's Create Something Great</h2>
+        <p class="section-subtitle">Have a project in mind? I'd love to hear about it. Let's build something impactful —
+          together.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <p>Reach out via email, WhatsApp, or fill the form. I typically respond within 24 hours.</p>
+
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-item-text">
+              <strong>Email</strong>
+              <a href="mailto:kamleshwar83@gmail.com">kamleshwar83@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="contact-item-text">
+              <strong>WhatsApp</strong>
+              <a href="https://wa.me/919818706594" target="_blank">+91 9818706594</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fab fa-instagram"></i></div>
+            <div class="contact-item-text">
+              <strong>Instagram</strong>
+              <a href="https://instagram.com/kam_the_designer" target="_blank">@kam_the_designer</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fab fa-linkedin"></i></div>
+            <div class="contact-item-text">
+              <strong>LinkedIn</strong>
+              <a href="https://www.linkedin.com/in/kamleshwar-sharma-b8695675/" target="_blank">Kamleshwar Sharma</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <h3>Send a Message</h3>
+          <p>Tell me about your project and I'll get back to you shortly.</p>
+          <form action="https://formspree.io/f/xrblzzgy" method="POST" class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" placeholder="Kamleshwar Sharma" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 9818706594" />
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message *</label>
+              <textarea id="message" name="message" placeholder="Tell me about your project, goals, and timeline..."
+                required></textarea>
+            </div>
+            <div class="form-submit-row">
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-name">KAM <span>THE</span> DESIGNER</div>
+          <div class="footer-tagline">Designs That Speak Loudly</div>
+          <p class="footer-desc">Professional graphic design services — branding, print, digital, packaging and more.
+            12+ years of creative excellence serving businesses across India.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/kam_the_designer" target="_blank" class="social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/kam-the-designer" target="_blank" class="social-link"
+              aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/kamleshwar-sharma-b8695675/" target="_blank" class="social-link"
+              aria-label="LinkedIn Profile">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://wa.me/919818706594" target="_blank" class="social-link" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Logo &amp; Branding</a></li>
+            <li><a href="#services">Social Media Design</a></li>
+            <li><a href="#services">Packaging Design</a></li>
+            <li><a href="#services">Print &amp; Collateral</a></li>
+            <li><a href="#services">Presentation Design</a></li>
+            <li><a href="#services">Event Branding</a></li>
+            <li><a href="#services">Infographics</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Kam The Designer. All Rights Reserved.</p>
+        <p class="credit">Designed with <span>❤️</span> by Kam The Designer</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== FLOATING BUTTONS ========== -->
+  <div class="float-btns">
+    <a href="https://wa.me/919818706594" target="_blank" class="float-btn float-wa" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="#contact" class="float-btn float-hire" aria-label="Hire Me">
+      HIRE<br>ME
+    </a>
+    <button class="float-btn float-top" id="scrollTop" aria-label="Scroll to top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      // ── Current Year ──
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // ── Navbar scroll ──
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
+      }, { passive: true });
+
+      // ── Mobile menu ──
+      const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+      let menuOpen = false;
+
+      menuToggle.addEventListener('click', () => {
+        menuOpen = !menuOpen;
+        navLinks.classList.toggle('open', menuOpen);
+        menuToggle.innerHTML = menuOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+      });
+
+      // ── Smooth scroll + close menu ──
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            window.scrollTo({ top: targetEl.offsetTop - 72, behavior: 'smooth' });
+            if (menuOpen) {
+              menuOpen = false;
+              navLinks.classList.remove('open');
+              menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+          }
+        });
+      });
+
+      // ── Active nav link on scroll ──
+      const sections = document.querySelectorAll('section[id]');
+      const navAnchors = document.querySelectorAll('.nav-links a');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navAnchors.forEach(a => {
+              a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+            });
+          }
+        });
+      }, { threshold: 0.3, rootMargin: '-72px 0px -40% 0px' });
+
+      sections.forEach(s => observer.observe(s));
+
+      // ── Testimonial slider ──
+      const testimonials = document.querySelectorAll('.testimonial');
+      const dots = document.querySelectorAll('.dot');
+      let current = 0;
+      let interval;
+
+      function showTestimonial(idx) {
+        testimonials.forEach(t => t.classList.remove('active'));
+        dots.forEach(d => d.classList.remove('active'));
+        testimonials[idx].classList.add('active');
+        dots[idx].classList.add('active');
+        current = idx;
+      }
+
+      function next() { showTestimonial((current + 1) % testimonials.length); }
+      function prev() { showTestimonial((current - 1 + testimonials.length) % testimonials.length); }
+
+      function startAuto() {
+        clearInterval(interval);
+        interval = setInterval(next, 5000);
+      }
+
+      document.querySelector('.testimonial-prev').addEventListener('click', () => { prev(); startAuto(); });
+      document.querySelector('.testimonial-next').addEventListener('click', () => { next(); startAuto(); });
+      dots.forEach((dot, i) => dot.addEventListener('click', () => { showTestimonial(i); startAuto(); }));
+
+      const slider = document.getElementById('testimonialSlider');
+      slider.addEventListener('mouseenter', () => clearInterval(interval));
+      slider.addEventListener('mouseleave', startAuto);
+
+      startAuto();
+
+      // ── Scroll-to-top ──
+      const scrollTopBtn = document.getElementById('scrollTop');
+      window.addEventListener('scroll', () => {
+        scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
+      }, { passive: true });
+      scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      // ── Contact form validation ──
+      const contactForm = document.getElementById('contactForm');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+          let valid = true;
+
+          const name = this.querySelector('#name');
+          const email = this.querySelector('#email');
+          const message = this.querySelector('#message');
+
+          [name, email, message].forEach(f => f.classList.remove('error'));
+
+          if (!name.value.trim()) { name.classList.add('error'); valid = false; }
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { email.classList.add('error'); valid = false; }
+          if (!message.value.trim()) { message.classList.add('error'); valid = false; }
+
+          if (!valid) {
+            e.preventDefault();
+            const firstError = this.querySelector('.error');
+            if (firstError) firstError.focus();
+            alert('Please fill in all required fields correctly.');
+          }
+        });
+      }
+
+      // ── Entrance animations (simple fade-up on scroll) ──
+      if ('IntersectionObserver' in window) {
+        const animEls = document.querySelectorAll('.skill-card, .service-card, .portfolio-item, .software-card, .about-badge');
+        animEls.forEach((el, i) => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(28px)';
+          el.style.transition = `opacity 0.5s ease ${(i % 6) * 0.08}s, transform 0.5s ease ${(i % 6) * 0.08}s`;
+        });
+
+        const animObs = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+              animObs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        animEls.forEach(el => animObs.observe(el));
+      }
+
+    });
+  </script>
 </body>
 
 </html>
