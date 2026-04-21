@@ -2,131 +2,1383 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Portfolio | Kam The Designer</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – Kam The Designer | 500+ Projects Across Branding, Social Media & Packaging</title>
+  <meta name="description" content="Explore Kam The Designer's full portfolio — branding, logo design, social media graphics, packaging, print & collateral. 12+ years of creative excellence." />
+
+  <link rel="icon" type="image/x-icon" href="Kam The Designer - Logo.png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    /* ==============================
+       CSS VARIABLES & RESET
+    ============================== */
+    :root {
+      --navy:        #000066;
+      --navy-dark:   #00004d;
+      --royal:       #1E3A8A;
+      --electric:    #3B82F6;
+      --gold:        #F59E0B;
+      --orange:      #FF6B00;
+      --white:       #FFFFFF;
+      --off-white:   #F8FAFC;
+      --light-bg:    #EEF2FF;
+      --charcoal:    #1E293B;
+      --muted:       #64748B;
+      --border:      #E2E8F0;
+      --glass-bg:    rgba(255,255,255,0.12);
+      --glass-border:rgba(255,255,255,0.20);
+      --shadow-sm:   0 4px 16px rgba(0,0,102,0.08);
+      --shadow-md:   0 8px 32px rgba(0,0,102,0.14);
+      --shadow-lg:   0 20px 60px rgba(0,0,102,0.18);
+      --radius-sm:   12px;
+      --radius-md:   20px;
+      --radius-lg:   28px;
+      --transition:  0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Poppins',sans-serif; color:var(--charcoal); background:var(--white); line-height:1.65; overflow-x:hidden; }
+    h1,h2,h3,h4,h5,h6 { font-family:'Montserrat',sans-serif; font-weight:700; line-height:1.2; }
+    a { text-decoration:none; color:inherit; }
+    img { max-width:100%; height:auto; display:block; }
+    ul { list-style:none; }
+
+    .container { width:100%; max-width:1200px; margin:0 auto; padding:0 24px; }
+
+    /* ==============================
+       BUTTONS
+    ============================== */
+    .btn {
+      display:inline-flex; align-items:center; gap:8px;
+      padding:14px 32px; font-family:'Montserrat',sans-serif;
+      font-weight:700; font-size:0.88rem; letter-spacing:0.04em;
+      border-radius:50px; border:2px solid transparent;
+      cursor:pointer; transition:all var(--transition); text-transform:uppercase;
+    }
+    .btn-primary { background:linear-gradient(135deg,var(--navy),var(--electric)); color:var(--white); box-shadow:0 6px 24px rgba(0,0,102,0.35); }
+    .btn-primary:hover { transform:translateY(-3px); box-shadow:0 12px 36px rgba(0,0,102,0.45); background:linear-gradient(135deg,var(--navy-dark),var(--royal)); }
+    .btn-gold { background:linear-gradient(135deg,var(--orange),var(--gold)); color:var(--white); box-shadow:0 6px 24px rgba(255,107,0,0.35); }
+    .btn-gold:hover { transform:translateY(-3px); box-shadow:0 12px 36px rgba(255,107,0,0.45); }
+    .btn-outline { border-color:var(--navy); color:var(--navy); background:transparent; }
+    .btn-outline:hover { background:var(--navy); color:var(--white); transform:translateY(-2px); }
+    .btn-white { background:var(--white); color:var(--navy); border-color:var(--white); box-shadow:0 6px 24px rgba(0,0,0,0.15); }
+    .btn-white:hover { transform:translateY(-3px); box-shadow:0 12px 36px rgba(0,0,0,0.25); }
+
+    /* ==============================
+       NAVBAR
+    ============================== */
+    .navbar {
+      position:fixed; top:0; left:0; right:0; z-index:1000;
+      padding:20px 0; background:rgba(0,0,77,0.97);
+      backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+      box-shadow:0 4px 24px rgba(0,0,0,0.25);
+    }
+    .navbar .container { display:flex; align-items:center; justify-content:space-between; }
+    .logoktd { height:60px; width:auto; object-fit:contain; filter:brightness(0) invert(1); transition:all var(--transition); }
+    .logoktd:hover { transform:scale(1.02); filter:brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,215,0,0.3)); }
+    .logo-text { font-family:'Montserrat',sans-serif; font-weight:900; font-size:1.4rem; color:var(--white); letter-spacing:-0.02em; }
+    .logo-text span { color:var(--gold); }
+    .nav-right { display:flex; align-items:center; gap:16px; }
+    .nav-title { color:rgba(255,255,255,0.6); font-size:0.8rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; }
+    .nav-sep { color:rgba(255,255,255,0.25); font-size:1.1rem; }
+    .back-btn {
+      display:inline-flex; align-items:center; gap:8px;
+      color:rgba(255,255,255,0.85); font-size:0.82rem; font-weight:600;
+      letter-spacing:0.04em; text-transform:uppercase;
+      padding:8px 18px; border-radius:50px;
+      border:1px solid rgba(255,255,255,0.25);
+      transition:all var(--transition);
+    }
+    .back-btn:hover { background:rgba(255,255,255,0.12); color:var(--white); border-color:rgba(255,255,255,0.45); }
+    .menu-toggle { display:none; background:none; border:none; color:var(--white); font-size:1.4rem; cursor:pointer; padding:8px; border-radius:8px; }
+
+    /* ==============================
+       PAGE HERO BANNER
+    ============================== */
+    .page-hero {
+      position:relative; min-height:340px; display:flex;
+      align-items:center; overflow:hidden;
+      background:linear-gradient(135deg,#00004d 0%,#000099 45%,#1E3A8A 75%,#0f2460 100%);
+      padding-top:88px;
+    }
+    .page-hero-grid {
+      position:absolute; inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
+      background-size:60px 60px;
+    }
+    .page-hero-blob {
+      position:absolute; border-radius:50%; filter:blur(80px); opacity:0.35;
+      animation:blobFloat 8s ease-in-out infinite;
+    }
+    .page-hero-blob-1 { width:400px; height:400px; background:radial-gradient(circle,#3B82F6,transparent); top:-120px; right:-80px; }
+    .page-hero-blob-2 { width:280px; height:280px; background:radial-gradient(circle,#F59E0B,transparent); bottom:-80px; left:5%; animation-delay:3s; }
+    @keyframes blobFloat { 0%,100%{transform:translateY(0) scale(1)} 33%{transform:translateY(-28px) scale(1.05)} 66%{transform:translateY(18px) scale(0.97)} }
+    .page-hero-content { position:relative; z-index:2; padding:40px 0; }
+    .page-hero-eyebrow {
+      display:inline-flex; align-items:center; gap:10px;
+      background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2);
+      color:var(--gold); font-size:0.78rem; font-weight:700;
+      letter-spacing:0.2em; text-transform:uppercase;
+      padding:7px 18px; border-radius:40px; margin-bottom:20px;
+    }
+    .page-hero-eyebrow::before {
+      content:''; width:7px; height:7px; border-radius:50%;
+      background:var(--gold); animation:pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
+    .page-hero h1 { font-size:clamp(2.2rem,5vw,3.8rem); font-weight:900; color:var(--white); margin-bottom:14px; letter-spacing:-0.02em; }
+    .page-hero h1 .gold { color:var(--gold); }
+    .page-hero h1 .accent { color:transparent; -webkit-text-stroke:2px var(--gold); }
+    .page-hero-sub { font-size:1.05rem; color:rgba(255,255,255,0.7); max-width:560px; margin-bottom:28px; }
+    .page-hero-stats { display:flex; gap:40px; flex-wrap:wrap; }
+    .hero-stat { border-left:3px solid var(--gold); padding-left:14px; }
+    .hero-stat .num { display:block; font-size:1.7rem; font-weight:900; color:var(--white); font-family:'Montserrat',sans-serif; }
+    .hero-stat .label { font-size:0.75rem; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.08em; }
+
+    /* ==============================
+       SECTION HELPERS
+    ============================== */
+    .section-tag {
+      display:inline-block;
+      background:linear-gradient(135deg,rgba(0,0,102,0.1),rgba(59,130,246,0.12));
+      color:var(--navy); font-size:0.75rem; font-weight:700;
+      letter-spacing:0.15em; text-transform:uppercase;
+      padding:6px 18px; border-radius:40px; border:1px solid rgba(0,0,102,0.15);
+      margin-bottom:14px;
+    }
+    .section-title { font-size:clamp(1.8rem,4vw,2.6rem); color:var(--navy); margin-bottom:14px; }
+    .section-subtitle { color:var(--muted); font-size:1rem; max-width:620px; }
+    .section-header { text-align:center; margin-bottom:48px; }
+    .section-header .section-subtitle { margin:0 auto; }
+
+    /* ==============================
+       FILTER BAR
+    ============================== */
+    .portfolio-section { padding:80px 0 100px; background:var(--white); }
+
+    .filter-bar {
+      display:flex; align-items:center; justify-content:center;
+      flex-wrap:wrap; gap:10px; margin-bottom:48px;
+    }
+    .filter-btn {
+      display:inline-flex; align-items:center; gap:7px;
+      padding:10px 22px; border-radius:50px;
+      border:1.5px solid var(--border); background:var(--white);
+      color:var(--muted); font-family:'Montserrat',sans-serif;
+      font-weight:700; font-size:0.78rem; letter-spacing:0.06em;
+      text-transform:uppercase; cursor:pointer;
+      transition:all var(--transition); white-space:nowrap;
+    }
+    .filter-btn i { font-size:0.85rem; }
+    .filter-btn:hover { border-color:var(--navy); color:var(--navy); background:var(--light-bg); transform:translateY(-2px); }
+    .filter-btn.active {
+      background:linear-gradient(135deg,var(--navy),var(--electric));
+      border-color:transparent; color:var(--white);
+      box-shadow:0 6px 20px rgba(0,0,102,0.3);
+      transform:translateY(-2px);
+    }
+    .filter-count {
+      background:rgba(255,255,255,0.22); border-radius:20px;
+      padding:1px 7px; font-size:0.7rem; font-weight:800;
+    }
+    .filter-btn:not(.active) .filter-count {
+      background:var(--light-bg); color:var(--navy);
+    }
+
+    /* Results count */
+    .results-bar {
+      display:flex; align-items:center; justify-content:space-between;
+      flex-wrap:wrap; gap:12px; margin-bottom:32px;
+      padding-bottom:20px; border-bottom:1px solid var(--border);
+    }
+    .results-text { color:var(--muted); font-size:0.88rem; }
+    .results-text strong { color:var(--navy); font-weight:700; }
+
+    /* ==============================
+       PORTFOLIO GRID
+    ============================== */
+    .portfolio-grid {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:28px;
+    }
+
+    /* Individual card */
+    .p-card {
+      border-radius:var(--radius-md); overflow:hidden;
+      background:var(--white); border:1px solid var(--border);
+      box-shadow:var(--shadow-sm);
+      transition:all var(--transition);
+      cursor:pointer; position:relative;
+    }
+    .p-card:hover {
+      transform:translateY(-10px);
+      box-shadow:var(--shadow-lg);
+      border-color:rgba(0,0,102,0.18);
+    }
+    .p-card.hidden { display:none; }
+
+    /* Image area */
+    .p-card-img {
+      position:relative; width:100%; aspect-ratio:4/3; overflow:hidden;
+    }
+    .p-card-img img {
+      width:100%; height:100%; object-fit:cover;
+      transition:transform 0.6s cubic-bezier(0.4,0,0.2,1);
+    }
+    .p-card:hover .p-card-img img { transform:scale(1.08); }
+
+    /* Placeholder when no image */
+    .p-card-placeholder {
+      width:100%; height:100%; display:flex; flex-direction:column;
+      align-items:center; justify-content:center; gap:12px;
+      font-family:'Montserrat',sans-serif; font-size:0.82rem;
+      font-weight:700; letter-spacing:0.05em; text-align:center; padding:20px;
+    }
+    .p-card-placeholder i { font-size:2.8rem; opacity:0.55; }
+    .p-card-placeholder .ph-title { font-size:0.9rem; font-weight:800; line-height:1.3; }
+    .p-card-placeholder .ph-sub { font-size:0.72rem; font-weight:600; opacity:0.7; }
+
+    /* Hover overlay */
+    .p-card-hover-overlay {
+      position:absolute; inset:0; background:rgba(0,0,77,0.82);
+      display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+      opacity:0; transition:opacity var(--transition);
+    }
+    .p-card:hover .p-card-hover-overlay { opacity:1; }
+    .p-card-hover-overlay .view-label {
+      color:var(--white); font-family:'Montserrat',sans-serif;
+      font-weight:800; font-size:0.88rem; letter-spacing:0.1em;
+      text-transform:uppercase;
+    }
+    .p-card-hover-overlay .view-icon {
+      width:52px; height:52px; border-radius:50%;
+      background:var(--gold); display:flex; align-items:center; justify-content:center;
+      font-size:1.3rem; color:var(--white);
+      box-shadow:0 6px 20px rgba(245,158,11,0.5);
+    }
+
+    /* Card body */
+    .p-card-body { padding:20px 22px 22px; }
+    .p-card-badge {
+      display:inline-flex; align-items:center; gap:5px;
+      font-size:0.68rem; font-weight:800; text-transform:uppercase;
+      letter-spacing:0.1em; padding:4px 12px; border-radius:30px;
+      margin-bottom:10px;
+    }
+    /* Badge colour per category */
+    .badge-branding    { background:rgba(0,0,102,0.1); color:var(--navy); }
+    .badge-social      { background:rgba(245,158,11,0.12); color:#b45309; }
+    .badge-packaging   { background:rgba(59,130,246,0.12); color:#1d4ed8; }
+    .badge-print       { background:rgba(16,185,129,0.12); color:#065f46; }
+
+    .p-card-title { font-size:1rem; font-weight:800; color:var(--charcoal); margin-bottom:6px; line-height:1.3; }
+    .p-card-desc { font-size:0.82rem; color:var(--muted); line-height:1.6; }
+
+    /* ==============================
+       LIGHTBOX / MODAL
+    ============================== */
+    .lightbox-overlay {
+      position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,30,0.92); backdrop-filter:blur(12px);
+      display:flex; align-items:center; justify-content:center;
+      padding:20px; opacity:0; pointer-events:none;
+      transition:opacity 0.3s ease;
+    }
+    .lightbox-overlay.open { opacity:1; pointer-events:all; }
+
+    .lightbox-card {
+      background:var(--white); border-radius:var(--radius-lg);
+      overflow:hidden; max-width:860px; width:100%;
+      box-shadow:0 40px 100px rgba(0,0,60,0.5);
+      display:grid; grid-template-columns:1.1fr 1fr;
+      transform:scale(0.93) translateY(20px);
+      transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s ease;
+      max-height:90vh; overflow-y:auto;
+    }
+    .lightbox-overlay.open .lightbox-card { transform:scale(1) translateY(0); }
+
+    .lightbox-img-wrap {
+      position:relative; min-height:320px; background:var(--light-bg);
+      overflow:hidden;
+    }
+    .lightbox-img-wrap img { width:100%; height:100%; object-fit:cover; }
+
+    .lightbox-img-placeholder {
+      width:100%; height:100%; min-height:320px;
+      display:flex; flex-direction:column; align-items:center;
+      justify-content:center; gap:14px;
+      font-family:'Montserrat',sans-serif; text-align:center; padding:32px;
+    }
+    .lightbox-img-placeholder i { font-size:4rem; opacity:0.45; }
+    .lightbox-img-placeholder span { font-size:0.9rem; font-weight:800; opacity:0.6; line-height:1.4; }
+
+    .lightbox-body { padding:40px 36px; display:flex; flex-direction:column; }
+    .lightbox-close {
+      position:absolute; top:18px; right:18px;
+      width:40px; height:40px; border-radius:50%;
+      background:rgba(0,0,0,0.55); color:var(--white);
+      border:none; font-size:1.1rem; cursor:pointer;
+      display:flex; align-items:center; justify-content:center;
+      transition:all var(--transition); z-index:10;
+    }
+    .lightbox-close:hover { background:var(--navy); transform:scale(1.1); }
+
+    .lightbox-badge { margin-bottom:14px; }
+    .lightbox-title { font-size:1.5rem; font-weight:900; color:var(--navy); margin-bottom:12px; line-height:1.25; }
+    .lightbox-desc { color:var(--muted); font-size:0.9rem; line-height:1.7; margin-bottom:22px; flex:1; }
+
+    .lightbox-meta { margin-bottom:24px; }
+    .lightbox-meta-item {
+      display:flex; align-items:flex-start; gap:10px;
+      font-size:0.82rem; color:var(--charcoal); margin-bottom:8px;
+    }
+    .lightbox-meta-item i { color:var(--navy); width:16px; margin-top:2px; flex-shrink:0; }
+    .lightbox-meta-item strong { font-weight:700; margin-right:4px; }
+
+    .lightbox-tags { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:24px; }
+    .lightbox-tag {
+      font-size:0.7rem; font-weight:700; text-transform:uppercase;
+      letter-spacing:0.07em; padding:4px 12px; border-radius:20px;
+      background:var(--light-bg); color:var(--navy); border:1px solid rgba(0,0,102,0.12);
+    }
+
+    .lightbox-actions { display:flex; gap:10px; flex-wrap:wrap; }
+    .lightbox-nav {
+      display:flex; align-items:center; justify-content:space-between;
+      padding-top:16px; margin-top:16px;
+      border-top:1px solid var(--border);
+    }
+    .lightbox-nav-btn {
+      display:inline-flex; align-items:center; gap:6px;
+      font-size:0.78rem; font-weight:700; text-transform:uppercase;
+      letter-spacing:0.06em; color:var(--muted); background:none;
+      border:1.5px solid var(--border); border-radius:30px;
+      padding:7px 16px; cursor:pointer; transition:all var(--transition);
+    }
+    .lightbox-nav-btn:hover { border-color:var(--navy); color:var(--navy); }
+    .lightbox-nav-btn:disabled { opacity:0.3; cursor:not-allowed; pointer-events:none; }
+
+    /* ==============================
+       CTA STRIP
+    ============================== */
+    .cta-strip {
+      background:linear-gradient(135deg,var(--navy),#000099 50%,var(--royal));
+      padding:80px 0; position:relative; overflow:hidden; text-align:center;
+    }
+    .cta-strip::before {
+      content:''; position:absolute; inset:0;
+      background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
+      background-size:60px 60px;
+    }
+    .cta-strip .section-tag { color:var(--gold); border-color:rgba(245,158,11,0.3); background:rgba(245,158,11,0.1); }
+    .cta-strip h2 { color:var(--white); font-size:clamp(1.8rem,4vw,2.8rem); margin-bottom:14px; }
+    .cta-strip p { color:rgba(255,255,255,0.7); font-size:1rem; margin-bottom:36px; max-width:540px; margin-left:auto; margin-right:auto; }
+    .cta-strip-btns { display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap; position:relative; z-index:2; }
+
+    /* ==============================
+       FOOTER
+    ============================== */
+    .footer { background:var(--navy-dark); color:var(--white); padding:72px 0 0; }
+    .footer-grid { display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:48px; padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,0.08); }
+    .footer-brand-name { font-family:'Montserrat',sans-serif; font-weight:900; font-size:1.5rem; letter-spacing:-0.02em; margin-bottom:6px; }
+    .footer-brand-name span { color:var(--gold); }
+    .footer-tagline { color:var(--gold); font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; margin-bottom:16px; }
+    .footer-desc { color:rgba(255,255,255,0.55); font-size:0.88rem; line-height:1.7; margin-bottom:24px; }
+    .footer-social { display:flex; gap:10px; }
+    .social-link {
+      width:38px; height:38px; border-radius:50%;
+      background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15);
+      display:flex; align-items:center; justify-content:center;
+      color:var(--white); font-size:0.9rem; transition:all var(--transition);
+    }
+    .social-link:hover { background:var(--gold); border-color:var(--gold); transform:translateY(-3px); }
+    .footer-col h4 { font-size:0.82rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.45); margin-bottom:22px; }
+    .footer-col ul li { margin-bottom:11px; }
+    .footer-col ul li a { font-size:0.88rem; color:rgba(255,255,255,0.65); transition:color var(--transition); }
+    .footer-col ul li a:hover { color:var(--white); }
+    .footer-bottom { padding:22px 0; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+    .footer-bottom p { font-size:0.8rem; color:rgba(255,255,255,0.4); }
+    .footer-bottom .credit span { color:var(--gold); }
+
+    /* ==============================
+       FLOATING BUTTONS
+    ============================== */
+    .float-btns { position:fixed; bottom:32px; right:28px; display:flex; flex-direction:column; gap:12px; z-index:999; }
+    .float-btn {
+      width:56px; height:56px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.4rem; cursor:pointer; transition:all var(--transition);
+      box-shadow:0 6px 24px rgba(0,0,0,0.25); border:none; text-decoration:none;
+    }
+    .float-btn:hover { transform:scale(1.12) translateY(-2px); }
+    .float-wa { background:#25D366; color:var(--white); }
+    .float-hire { background:linear-gradient(135deg,var(--orange),var(--gold)); color:var(--white); font-size:0.6rem; font-weight:800; font-family:'Montserrat',sans-serif; letter-spacing:0.02em; text-align:center; line-height:1.2; }
+    .float-top { background:var(--navy); color:var(--white); opacity:0; pointer-events:none; transition:all var(--transition); }
+    .float-top.visible { opacity:1; pointer-events:all; }
+
+    /* ==============================
+       ANIMATIONS
+    ============================== */
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(28px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    .animate-in { animation:fadeUp 0.55s ease both; }
+
+    /* ==============================
+       EMPTY STATE
+    ============================== */
+    .empty-state {
+      grid-column:1/-1; text-align:center; padding:80px 20px;
+      display:none;
+    }
+    .empty-state.show { display:block; }
+    .empty-state i { font-size:3.5rem; color:var(--border); margin-bottom:16px; }
+    .empty-state h3 { font-size:1.2rem; color:var(--muted); margin-bottom:8px; }
+    .empty-state p { font-size:0.88rem; color:var(--border); }
+
+    /* ==============================
+       RESPONSIVE
+    ============================== */
+    @media (max-width:1024px) {
+      .portfolio-grid { grid-template-columns:repeat(2,1fr); }
+      .lightbox-card { grid-template-columns:1fr; }
+      .lightbox-img-wrap { min-height:260px; }
+      .footer-grid { grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width:768px) {
+      .menu-toggle { display:block; }
+      .nav-right .nav-title,.nav-right .nav-sep { display:none; }
+      .portfolio-grid { grid-template-columns:repeat(2,1fr); gap:18px; }
+      .lightbox-card { grid-template-columns:1fr; }
+      .page-hero h1 { font-size:2.2rem; }
+      .footer-grid { grid-template-columns:1fr; gap:32px; }
+      .footer-bottom { flex-direction:column; text-align:center; }
+      .results-bar { flex-direction:column; align-items:flex-start; }
+    }
+    @media (max-width:480px) {
+      .portfolio-grid { grid-template-columns:1fr; }
+      .filter-bar { gap:7px; }
+      .filter-btn { padding:8px 14px; font-size:0.72rem; }
+      .lightbox-body { padding:28px 22px; }
+      .page-hero-stats { gap:24px; }
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="Kam The Designer - Logo.png" alt="Kam The Designer Logo" />
-                </a>
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                </ul>
-                <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Portfolio Gallery -->
-    <section class="portfolio-gallery">
-        <div class="container">
-            <h1>Design Portfolio</h1>
-            <p>A collection of my professional design work across branding, print, and digital media.</p>
-            
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="Branding.png" alt="branding">
-                    <div class="portfolio-overlay">
-                        <h3>Branding</h3>
-                        <p>Logo, business cards, and stationery</p>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <img src="Social Media Posts.png" alt="Social Media Posts">
-                    <div class="portfolio-overlay">
-                        <h3>Social Media Posts</h3>
-                        <p>Instagram posts and stories series</p>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <img src="Soap Pacakaging design.png" alt="Product Packaging Design">
-                    <div class="portfolio-overlay">
-                        <h3>Soap Pacakaging design</h3>
-                        <p>Cosmetic product packaging</p>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <img src="Brochure-01.jpg " alt="Brochure">
-                    <div class="portfolio-overlay">
-                        <h3>Brochure</h3>
-                        <p>Luxury property marketing collateral</p>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <img src="Business Card-Kamthedesigner-03.jpg" alt="Business Card Design">
-                    <div class="portfolio-overlay">
-                        <h3>Business Card Design</h3>
-                        <p>Minimalist card designs for professionals</p>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <img src="Flyer-01.jpg" alt="Flyers">
-                    <div class="portfolio-overlay">
-                        <h3>Flyers</h3>
-                        <p>Flyers Pamplates</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="back-home">
-                <a href="index.html" class="btn">← Back to Home</a>
-            </div>
-        </div>
-    </section>
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo-text">
+        <img src="Kam The Designer - Logo.png" alt="KTD Logo" class="logoktd"
+          onerror="this.outerHTML='<span class=\'logo-text\'>KAM <span>THE</span> DESIGNER</span>'">
+      </a>
+      <div class="nav-right">
+        <span class="nav-title">Portfolio</span>
+        <span class="nav-sep">/</span>
+        <a href="index.html" class="back-btn">
+          <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+      </div>
+    </div>
+  </header>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <img src="Kam The Designer - Logo.png" alt="Kam The Designer Logo" class="footer-logo" />
-                    <p>Creating designs that speak volumes for your brand.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="index.html#services">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Follow Me</h4>
-                    <div class="social-icons">
-                        <a href="https://instagram.com/kam_the_designer" target="_blank"><img src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram" /></a>
-                        <a href="https://www.linkedin.com/company/kam-the-designer" target="_blank"><img src="https://img.icons8.com/color/48/linkedin.png" alt="LinkedIn" /></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 Kam The Designer. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+  <!-- ========== PORTFOLIO SECTION ========== -->
+  <section class="portfolio-section">
+    <div class="container">
 
-    <script src="script.js"></script>
+      <div class="section-header">
+        <span class="section-tag">My Work</span>
+        <h2 class="section-title">All Projects</h2>
+        <p class="section-subtitle">Browse by category or explore everything — click any project for a closer look.</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-btn active" data-filter="all">
+          <i class="fas fa-th"></i> All Projects <span class="filter-count" id="cnt-all">18</span>
+        </button>
+        <button class="filter-btn" data-filter="branding">
+          <i class="fas fa-fingerprint"></i> Branding &amp; Logo <span class="filter-count" id="cnt-branding">6</span>
+        </button>
+        <button class="filter-btn" data-filter="social">
+          <i class="fas fa-hashtag"></i> Social Media <span class="filter-count" id="cnt-social">4</span>
+        </button>
+        <button class="filter-btn" data-filter="packaging">
+          <i class="fas fa-box-open"></i> Packaging <span class="filter-count" id="cnt-packaging">4</span>
+        </button>
+        <button class="filter-btn" data-filter="print">
+          <i class="fas fa-print"></i> Print &amp; Collateral <span class="filter-count" id="cnt-print">4</span>
+        </button>
+      </div>
+
+      <!-- Results bar -->
+      <div class="results-bar">
+        <p class="results-text">Showing <strong id="visibleCount">18</strong> projects</p>
+      </div>
+
+      <!-- Grid -->
+      <div class="portfolio-grid" id="portfolioGrid">
+
+        <!-- ===== BRANDING & LOGO (6) ===== -->
+
+        <!-- 1 -->
+        <div class="p-card" data-category="branding"
+             data-title="NestFinder – Real Estate Brand Identity"
+             data-cat-label="Branding &amp; Logo"
+             data-badge="badge-branding"
+             data-desc="A complete brand identity for NestFinder, a real estate company. Designed a modern, trustworthy logo system with navy and gold tones paired with a comprehensive brand guide covering typography, color palette, business stationery, and social media templates."
+             data-client="NestFinder Realty"
+             data-tools="Adobe Illustrator, Photoshop"
+             data-tags="Logo Design,Brand Guide,Stationery,Real Estate"
+             data-img="images/branding-nestfinder.jpg"
+             data-ph-gradient="linear-gradient(135deg,#000066,#1E3A8A)"
+             data-ph-icon="fas fa-building"
+             data-ph-title="NestFinder — Real Estate Brand Identity"
+             data-ph-sub="Full Brand System · Logo · Stationery">
+          <div class="p-card-img">
+            <img src="Branding.png" alt="NestFinder Branding" loading="lazy"
+                 onerror="this.parentElement.innerHTML=buildPlaceholder(this.closest('.p-card'))">
+            <div class="p-card-hover-overlay">
+              <div class="view-icon"><i class="fas fa-expand-alt"></i></div>
+              <span class="view-label">View Project</span>
+            </div>
+          </div>
+          <div class="p-card-body">
+            <span class="p-card-badge badge-branding"><i class="fas fa-fingerprint"></i> Branding &amp; Logo</span>
+            <h3 class="p-card-title">NestFinder — Real Estate Brand Identity</h3>
+            <p class="p-card-desc">Full brand system with logo, color palette, stationery & social templates for a real estate firm.</p>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="p-card" data-category="branding"
+             data-title="GlowUp Beauty – Cosmetics Brand Identity"
+             data-cat-label="Branding &amp; Logo"
+             data-badge="badge-branding"
+             data-desc="Brand identity for a premium cosmetics and skincare brand. The visual identity blends luxury gold tones with soft pastels, featuring a custom wordmark logo, packaging labels, and a full brand guide for consistent digital and print application."
+             data-client="GlowUp Beauty Co."
+             data-tools="Adobe Illustrator, Photoshop"
+             data-tags="Logo Design,Cosmetics,Packaging Labels,Brand Guide"
+             data-img="images/branding-glowup.jpg"
+             data-ph-gradient="linear-gradient(135deg,#7c3aed,#c026d3)"
+             data-ph-icon="fas fa-spa"
+             data-ph-title="GlowUp Beauty — Cosmetics Brand Identity"
+             data-ph-sub="Logo · Labels · Brand Guide">
+          <div class="p-card-img">
+            <img src="images/branding-glowup.jpg" alt="GlowUp Beauty Branding" loading="lazy"
+                 onerror="this.parentElement.innerHTML=buildPlaceholder(this.closest('.p-card'))">
+            <div class="p-card-hover-overlay">
+              <div class="view-icon"><i class="fas fa-expand-alt"></i></div>
+              <span class="view-label">View Project</span>
+            </div>
+          </div>
+          <div class="p-card-body">
+            <span class="p-card-badge badge-branding"><i class="fas fa-fingerprint"></i> Branding &amp; Logo</span>
+            <h3 class="p-card-title">GlowUp Beauty — Cosmetics Brand Identity</h3>
+            <p class="p-card-desc">Luxury brand system for a skincare brand: custom wordmark, palette, packaging labels & guide.</p>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="p-card" data-category="branding"
+             data-title="ZenBrew Café – F&B Brand Identity"
+             data-cat-label="Branding &amp; Logo"
+             data-badge="badge-branding"
+             data-desc="Complete visual identity for a specialty coffee café. The logo uses hand-drawn coffee-cup iconography paired with warm earthy tones. Deliverables included menu design, takeaway cups, packaging stickers, social media profile assets, and a full brand standards document."
+             data-client="ZenBrew Café"
+             data-tools="Adobe Illustrator, CorelDRAW"
+             data-tags="F&B,Logo Design,Menu Design,Packaging"
+             data-img="images/branding-zenbrew.jpg"
+             data-ph-gradient="linear-gradient(135deg,#78350f,#b45309)"
+             data-ph-icon="fas fa-mug-hot"
+             data-ph-title="ZenBrew Café — F&amp;B Brand Identity"
+             data-ph-sub="Logo · Menu · Packaging Stickers">
+          <div class="p-card-img">
+            <img src="images/branding-zenbrew.jpg" alt="ZenBrew Café Branding" loading="lazy"
+                 onerror="this.parentElement.innerHTML=buildPlaceholder(this.closest('.p-card'))">
+            <div class="p-card-hover-overlay">
+              <div class="view-icon"><i class="fas fa-expand-alt"></i></div>
+              <span class="view-label">View Project</span>
+            </div>
+          </div>
+          <div class="p-card-body">
+            <span class="p-card-badge badge-branding"><i class="fas fa-fingerprint"></i> Branding &amp; Logo</span>
+            <h3 class="p-card-title">ZenBrew Café — F&amp;B Brand Identity</h3>
+            <p class="p-card-desc">Warm, inviting brand identity for a specialty coffee café with menus and packaging.</p>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="p-card" data-category="branding"
+             data-title="SwiftMove Logistics – Corporate Rebrand"
+             data-cat-label="Branding &amp; Logo"
+             data-badge="badge-branding"
+             data-desc="Complete corporate rebranding for a logistics and courier company. The new identity communicates speed and reliability with a bold, geometric logo mark. The project included vehicle livery designs, uniform graphics, letterheads, and a detailed brand manual."
+             data-client="SwiftMove Logistics Pvt. Ltd."
+             data-tools="Adobe Illustrator, Photoshop"
+             data-tags="Corporate Rebrand,Logistics,Livery Design,Brand Manual"
+             data-img="images/branding-swiftmove.jpg"
+             data-ph-gradient="linear-gradient(135deg,#0f172a,#1e40af)"
+             data-ph-icon="fas fa-truck-fast"
+             data-ph-title="SwiftMove Logistics — Corporate Rebrand"
+             data-ph-sub="Logo · Vehicle Livery · Brand Manual">
+          <div class="p-card-img">
+            <img src="images/branding-swiftmove.jpg" alt="SwiftMove Branding" loading="lazy"
+                 onerror="this.parentElement.innerHTML=buildPlaceholder(this.closest('.p-card'))">
+            <div class="p-card-hover-overlay">
+              <div class="view-icon"><i class="fas fa-expand-alt"></i></div>
+              <span class="view-label">View Project</span>
+            </div>
+          </div>
+          <div class="p-card-body">
+            <span class="p-card-badge badge-branding"><i class="fas fa-fingerprint"></i> Branding &amp; Logo</span>
+            <h3 class="p-card-title">SwiftMove Logistics — Corporate Rebrand</h3>
+            <p class="p-card-desc">Bold corporate rebrand communicating speed and reliability for a logistics firm.</p>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="p-card" data-category="branding"
+             data-title="FitPulse – Fitness Studio Brand"
+             data-cat-label="Branding &amp; Logo"
+             data-badge="badge-branding"
+             data-desc="Dynamic brand identity for a modern fitness studio. Energetic gradient logo mark with motion lines conveys power and movement. The project spanned membership cards, gym signage, branded apparel, social media templates, and digital ad creatives."
+             data-client="FitPulse Fitness Studio"
+             data-tools="Adobe Illustrator, Photoshop"
+             data-tags="Fitness,Logo Design,Signage,Apparel Graphics"
+             data-img="images/branding-fitpulse.jpg"
+             data-ph-gradient="linear-gradient(135deg,#dc2626,#f97316)"
+             data-ph-icon="fas fa-dumbbell"
+             data-ph-title="FitPulse — Fitness Studio Brand Identity"
+             data-ph-sub="Logo · Signage · Apparel · Social Templates">
+          <div class="p-card-img">
+            <img src="images/branding-fitpulse.jpg" alt="FitPulse Branding" loading="lazy"
+                 onerror="this.parentElement.innerHTML=buildPlaceholder(this.closest('.p-card'))">
+            <div class="p-card-hover-overlay">
+              <div class="view-icon"><i class="fas fa-expand-alt"></i></div>
+              <span class="view-label">View Project</span>
+            </div>
+          </div>
+          <div class="p-card-body">
+            <span class="p-card-badge badge-branding"><i class="fas fa-fingerprint"></i> Branding &amp; Logo</span>
+            <h3 class="p-card-title">FitPulse — Fitness Studio Brand</h3>
+            <p class="p-card-desc">Energetic, gradient-driven brand identity for a modern fitness studio with signage & apparel.</p>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="p-card" data-category="branding"
+             data-title="EduReach Academy – Education Brand"
+             data-cat-label="Branding &amp; Logo"
+             data-badge="badge-branding"
+             data-desc="Friendly yet professional brand identity for an educational coaching centre. The logo features a stylised open-book motif. Deliverables included prospectus design, ID cards, banners, admit cards, and a comprehensive social media kit for Instagram and Facebook."
+             data-client="EduReach Academy"
+             data-tools="Adobe Illustrator, Canva, Photoshop"
+             data-tags="Education,Logo Design,Prospectus,ID Cards,Social Media Kit"
+             data-img="images/branding-edureach.jpg"
+             data-ph-gradient="linear-gradient(135deg,#065f46,#0891b2)"
+             data-ph-icon="fas fa-graduation-cap"
+             data-ph-title="EduReach Academy — Education Brand"
+             data-ph-sub="Logo · Prospectus · Social Media Kit">
+          <div class="p-card-img">
+            <img src="images/branding-edureach.jpg" alt="EduReach Branding" loading="lazy"
+                 onerror="this.parentElement.innerHTML=buildPlaceholder(this.closest('.p-card'))">
+            <div class="p-card-hover-overlay">
+              <div class="view-icon"><i class="fas fa-expand-alt"></i></div>
+              <span class="view-label">View Project</span>
+            </div>
+          </div>
+          <div class="p-card-body">
+            <span class="p-card-badge badge-branding"><i class="fas fa-fingerprint"></i> Branding &amp; Logo</span>
+            <h3 class="p-card-title">EduReach Academy — Education Brand</h3>
+            <p class="p-card-desc">Friendly, professional brand identity for a coaching centre with prospectus & social kit.</p>
+          </div>
+        </div>
+
+        <!-- ===== SOCIAL MEDIA (4) ===== -->
+
+        <!-- 7 -->
+        <div class="p-card" data-category="social"
+             data-title="NestFinder – Social Media Campaign"
+             data-cat-label="Social Media"
+             data-badge="badge-social"
+             data-desc="A complete social media visual campaign for NestFinder's Instagram and Facebook channels. Designed a cohesive set of property showcase posts, festival greeting posts, offer announcement graphics, and story templates maintaining strict brand consistency across all formats."
+             data-client="NestFinder Realty"
+             data-tools="Adobe Photoshop, Canva"
+             data-tags="Instagram,Facebook,Posts,Stories,Real Estate"
+             data-img="images/social-nestfinder.jpg"
+             data-ph-gradient="linear-gradient(135deg,#1d4ed8,#0891b2)"
+             data-ph-icon="fas fa-hashtag"
+             data-ph-title="NestFinder — Social Media Campaign"
+             data-ph-sub="Instagram · Facebook · Stories">
+          <div class="p-card-img">
+            <img src="Social Media Posts.png" alt="NestFinder Social Media" loading="lazy"
+                 onerror="this.parentElement.innerHTML=buildPlaceholder(this.closest('.p-card'))">
+            <div class="p-card-hover-overlay">
+              <div class="view-icon"><i class="fas fa-expand-alt"></i></div>
+              <span class="view-label">View Project</span>
+            </div>
+          </div>
+          <div class="p-card-body">
+            <span class="p-card-badge badge-social"><i class="fas fa-hashtag"></i> Social Media</span>
+            <h3 class="p-card-title">NestFinder — Social Media Campaign</h3>
+            <p class="p-card-desc">Instagram &amp; Facebook post series: property showcases, festival posts, offer graphics & story templates.</p>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="p-card" data-category="social"
+             data-title="GlowUp Beauty – Instagram Feed Revamp"
+             data-cat-label="Social Media"
+             data-badge="badge-social"
+             data-desc="Redesigned the entire Instagram visual identity for GlowUp Beauty. Created a consistent feed aesthetic using soft-luxury aesthetics, coordinated colour palettes, carousel post designs for product launches, before-and-after posts, and story highlight cover icons."
+             data-client="GlowUp Beauty Co."
+             data-tools="Adobe Photoshop, Canva"
+             data-tags="Instagram,Feed Design,Carousel Posts,Story Highlights"
+             data-img="images/social-glowup.jpg"
+             data-ph-gradient="linear-gradient(135deg,#be185d,#9333ea)"
+             data-ph-icon="fab fa-instagram"
+             data-ph-title="GlowUp Beauty — Instagram Feed Revamp"
+             data-ph-sub="Feed Design · Carousel · Story Highlights">
+          <div class="p-card-img">
+            <img src="images/social-glowup.jpg" alt="GlowUp Instagram" loading="lazy"
+                 onerror="this.parentElement.innerHTML=buildPlaceholder(this.closest('.p-card'))">
+            <div class="p-card-hover-overlay">
+              <div class="view-icon"><i class="fas fa-expand-alt"></i></div>
+              <span class="view-label">View Project</span>
+            </div>
+          </div>
+          <div class="p-card-body">
+            <span class="p-card-badge badge-social"><i class="fas fa-hashtag"></i> Social Media</span>
+            <h3 class="p-card-title">GlowUp Beauty — Instagram Feed Revamp</h3>
+            <p class="p-card-desc">Soft-luxury Instagram aesthetic: coordinated feed, carousel posts, product launches & highlight icons.</p>
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="p-card" data-category="social"
+             data-title="FitPulse – Paid Ad Creatives"
+             data-cat-label="Social Media"
+             data-badge="badge-social"
+             data-desc="High-converting Facebook and Instagram paid ad creatives for a seasonal membership drive. Designed a series of 10 ad variations across multiple sizes (1:1, 9:16, 1.91:1) with bold calls-to-action, testimonial-overlay formats, and animated story ad layouts."
+             data-client="FitPulse Fitness Studio"
+             data-tools="Adobe Photoshop, Illustrator"
+             data-tags="Facebook Ads,Instagram Ads,A/B Testing,Campaign"
+             data-img="images/social-fitpulse-ads.jpg"
+             data-ph-gradient="linear-gradient(135deg,#991b1b,#c2410c)"
+             data-ph-icon="fas fa-rectangle-ad"
+             data-ph-title="FitPulse — Paid Ad Creatives"
+             data-ph-sub="Facebook Ads · Instagram Ads · Story Ads">
+          <div class="p-card-img">
+            <img src="images/social-fitpulse-ads.jpg" alt="FitPulse Ads" loading="lazy"
+                 onerror="this.parentElement.innerHTML=buildPlaceholder(this.closest('.p-card'))">
+            <div class="p-card-hover-overlay">
+              <div class="view-icon"><i class="fas fa-expand-alt"></i></div>
+              <span class="view-label">View Project</span>
+            </div>
+          </div>
+          <div class="p-card-body">
+            <span class="p-card-badge badge-social"><i class="fas fa-hashtag"></i> Social Media</span>
+            <h3 class="p-card-title">FitPulse — Paid Ad Creatives</h3>
+            <p class="p-card-desc">10-variation ad campaign for Facebook & Instagram membership drive with multiple format sizes.</p>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="p-card" data-category="social"
+             data-title="EduReach – LinkedIn Content Series"
+             data-cat-label="Social Media"
+             data-badge="badge-social"
+             data-desc="A 30-post LinkedIn content calendar and visual template series for an educational academy. Designs covered exam tip graphics, student success story quotes, infographic-style study guides, and event announcement posts — all adhering to the academy's brand standards."
+             data-client="EduReach Academy"
+             data-tools="Canva, Adobe Photoshop"
+             data-tags="LinkedIn,Content Calendar,Infographics,Education"
+             data-img="images/social-edureach-linkedin.jpg"
+             data-ph-gradient="linear-gradient(135deg,#0369a1,#0ea5e9)"
+             data-ph-icon="fab fa-linkedin"
+             data-ph-title="EduReach — LinkedIn Content Series"
+             data-ph-sub="LinkedIn · 30-Post Calendar · Infographics">
+          <div class="p-card-img">
+            <img src="images/social-edureach-linkedin.jpg" alt="EduReach LinkedIn" loading="lazy"
+                 onerror="this.parentElement.innerHTML=buildPlaceholder(this.closest('.p-card'))">
+            <div class="p-card-hover-overlay">
+              <div class="view-icon"><i class="fas fa-expand-alt"></i></div>
+              <span class="view-label">View Project</span>
+            </div>
+          </div>
+          <div class="p-card-body">
+            <span class="p-card-badge badge-social"><i class="fas fa-hashtag"></i> Social Media</span>
+            <h3 class="p-card-title">EduReach — LinkedIn Content Series</h3>
+            <p class="p-card-desc">30-post LinkedIn calendar: exam tips, student spotlights, infographic guides & event posts.</p>
+          </div>
+        </div>
+
+        <!-- ===== PACKAGING (4) ===== -->
+
+        <!-- 11 -->
+        <div class="p-card" data-category="packaging"
+             data-title="PuraSoap – Handmade Soap Packaging"
+             data-cat-label="Packaging"
+             data-badge="badge-packaging"
+             data-desc="Artisanal packaging design for a handmade soap brand. Created a natural, premium look using textured paper-effect backgrounds, botanical illustrations, and a minimal label system. Designed for both single-bar wrap labels and gift box packaging with a window-cut display."
+             data-client="PuraSoap Naturals"
+             data-tools="Adobe Illustrator, Photoshop"
+             data-tags="Soap,Packaging,Labels,Gift Box,Retail"
+             data-img="Soap Pacakaging design.png"
+             data-ph-gradient="linear-gradient(135deg,#166534,#15803d)"
+             data-ph-icon="fas fa-soap"
+             data-ph-title="PuraSoap — Handmade Soap Packaging"
+             data-ph-sub="Wrap Labels · Gift Box · Retail Display">
+          <div class="p-card-img">
+            <img src="Soap Pacakaging design.png" alt="PuraSoap Packaging" loading="lazy"
+                 onerror="this.parentElement.innerHTML=buildPlaceholder(this.closest('.p-card'))">
+            <div class="p-card-hover-overlay">
+              <div class="view-icon"><i class="fas fa-expand-alt"></i></div>
+              <span class="view-label">View Project</span>
+            </div>
+          </div>
+          <div class="p-card-body">
+            <span class="p-card-badge badge-packaging"><i class="fas fa-box-open"></i> Packaging</span>
+            <h3 class="p-card-title">PuraSoap — Handmade Soap Packaging</h3>
+            <p class="p-card-desc">Natural, premium packaging: botanical illustrations, wrap labels & gift box for artisan soap brand.</p>
+          </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="p-card" data-category="packaging"
+             data-title="NourishMe – Health Supplement Packaging"
+             data-cat-label="Packaging"
+             data-badge="badge-packaging"
+             data-desc="Premium supplement packaging for a health and wellness brand's product range of protein powders and vitamin capsules. Designed clinical-yet-vibrant labels with clear hierarchy for nutritional information, QR codes, and certifications. Included cylindrical tin and sachet formats."
+             data-client="NourishMe Health"
+             data-tools="Adobe Illustrator, Photoshop"
+             data-tags="Supplements,Label Design,Health,Tin Packaging,Sachets"
+             data-img="images/packaging-nourishme.jpg"
+             data-ph-gradient="linear-gradient(135deg,#0f766e,#0369a1)"
+             data-ph-icon="fas fa-pills"
+             data-ph-title="NourishMe — Health Supplement Packaging"
+             data-ph-sub="Protein Tins · Capsule Labels · Sachets">
+          <div class="p-card-img">
+            <img src="images/packaging-nourishme.jpg" alt="NourishMe Packaging" loading="lazy"
+                 onerror="this.parentElement.innerHTML=buildPlaceholder(this.closest('.p-card'))">
+            <div class="p-card-hover-overlay">
+              <div class="view-icon"><i class="fas fa-expand-alt"></i></div>
+              <span class="view-label">View Project</span>
+            </div>
+          </div>
+          <div class="p-card-body">
+            <span class="p-card-badge badge-packaging"><i class="fas fa-box-open"></i> Packaging</span>
+            <h3 class="p-card-title">NourishMe — Health Supplement Packaging</h3>
+            <p class="p-card-desc">Premium supplement labels for protein tins and vitamin sachets with clear nutritional hierarchy.</p>
+          </div>
+        </div>
+
+        <!-- 13 -->
+        <div class="p-card" data-category="packaging"
+             data-title="SipFresh – Juice Bottle Label Series"
+             data-cat-label="Packaging"
+             data-badge="badge-packaging"
+             data-desc="Vibrant, fruit-forward label designs for a cold-pressed juice brand's 8-variant product line. Each SKU has a distinct colour code and fruit illustration while maintaining a unified label architecture. Designed for PET bottles in 250ml and 500ml formats with peel-resistant material specs."
+             data-client="SipFresh Beverages"
+             data-tools="Adobe Illustrator, CorelDRAW"
+             data-tags="Beverage,Label Design,Cold-Press Juice,F&B,SKU Range"
+             data-img="images/packaging-sipfresh.jpg"
+             data-ph-gradient="linear-gradient(135deg,#b45309,#d97706)"
+             data-ph-icon="fas fa-bottle-water"
+             data-ph-title="SipFresh — Cold-Pressed Juice Labels"
+             data-ph-sub="8-SKU Label Range · PET Bottle · 250ml &amp; 500ml">
+          <div class="p-card-img">
+            <img src="images/packaging-sipfresh.jpg" alt="SipFresh Packaging" loading="lazy"
+                 onerror="this.parentElement.innerHTML=buildPlaceholder(this.closest('.p-card'))">
+            <div class="p-card-hover-overlay">
+              <div class="view-icon"><i class="fas fa-expand-alt"></i></div>
+              <span class="view-label">View Project</span>
+            </div>
+          </div>
+          <div class="p-card-body">
+            <span class="p-card-badge badge-packaging"><i class="fas fa-box-open"></i> Packaging</span>
+            <h3 class="p-card-title">SipFresh — Cold-Pressed Juice Labels</h3>
+            <p class="p-card-desc">8-variant fruit-forward label series for PET juice bottles with colour-coded SKU architecture.</p>
+          </div>
+        </div>
+
+        <!-- 14 -->
+        <div class="p-card" data-category="packaging"
+             data-title="LuxeThreads – Fashion Retail Packaging"
+             data-cat-label="Packaging"
+             data-badge="badge-packaging"
+             data-desc="Upscale retail packaging suite for a fashion boutique including glossy shopping bags in two sizes, tissue paper patterns, hang tags with embossed logo effect, and garment boxes. The monochrome-gold aesthetic elevates the unboxing experience for premium fashion retail."
+             data-client="LuxeThreads Boutique"
+             data-tools="Adobe Illustrator, Photoshop"
+             data-tags="Fashion,Retail,Shopping Bags,Hang Tags,Gift Box"
+             data-img="images/packaging-luxethreads.jpg"
+             data-ph-gradient="linear-gradient(135deg,#1c1917,#57534e)"
+             data-ph-icon="fas fa-bag-shopping"
+             data-ph-title="LuxeThreads — Fashion Retail Packaging"
+             data-ph-sub="Shopping Bags · Hang Tags · Garment Boxes">
+          <div class="p-card-img">
+            <img src="images/packaging-luxethreads.jpg" alt="LuxeThreads Packaging" loading="lazy"
+                 onerror="this.parentElement.innerHTML=buildPlaceholder(this.closest('.p-card'))">
+            <div class="p-card-hover-overlay">
+              <div class="view-icon"><i class="fas fa-expand-alt"></i></div>
+              <span class="view-label">View Project</span>
+            </div>
+          </div>
+          <div class="p-card-body">
+            <span class="p-card-badge badge-packaging"><i class="fas fa-box-open"></i> Packaging</span>
+            <h3 class="p-card-title">LuxeThreads — Fashion Retail Packaging</h3>
+            <p class="p-card-desc">Premium unboxing suite: monochrome-gold bags, tissue paper, hang tags & garment boxes.</p>
+          </div>
+        </div>
+
+        <!-- ===== PRINT & COLLATERAL (4) ===== -->
+
+        <!-- 15 -->
+        <div class="p-card" data-category="print"
+             data-title="NestFinder – Marketing Brochure"
+             data-cat-label="Print &amp; Collateral"
+             data-badge="badge-print"
+             data-desc="An 8-page bi-fold marketing brochure for a real estate company's premium residential project launch. The layout balances lifestyle photography placements, floor plan diagrams, amenity icons, and a compelling narrative structure — print-ready in CMYK at 300 DPI."
+             data-client="NestFinder Realty"
+             data-tools="Adobe InDesign, Illustrator, Photoshop"
+             data-tags="Brochure,Print,Real Estate,CMYK,8-Page Layout"
+             data-img="images/print-nestfinder-brochure.jpg"
+             data-ph-gradient="linear-gradient(135deg,#000066,#3B82F6)"
+             data-ph-icon="fas fa-book-open"
+             data-ph-title="NestFinder — 8-Page Marketing Brochure"
+             data-ph-sub="Bi-Fold · CMYK Print-Ready · Real Estate">
+          <div class="p-card-img">
+            <img src="images/print-nestfinder-brochure.jpg" alt="NestFinder Brochure" loading="lazy"
+                 onerror="this.parentElement.innerHTML=buildPlaceholder(this.closest('.p-card'))">
+            <div class="p-card-hover-overlay">
+              <div class="view-icon"><i class="fas fa-expand-alt"></i></div>
+              <span class="view-label">View Project</span>
+            </div>
+          </div>
+          <div class="p-card-body">
+            <span class="p-card-badge badge-print"><i class="fas fa-print"></i> Print &amp; Collateral</span>
+            <h3 class="p-card-title">NestFinder — 8-Page Marketing Brochure</h3>
+            <p class="p-card-desc">Premium real estate launch brochure with floor plans, amenity icons & lifestyle imagery.</p>
+          </div>
+        </div>
+
+        <!-- 16 -->
+        <div class="p-card" data-category="print"
+             data-title="FitPulse – Gym Membership Flyer"
+             data-cat-label="Print &amp; Collateral"
+             data-badge="badge-print"
+             data-desc="High-impact A4 promotional flyer for FitPulse's New Year membership drive. Bold typography hierarchy, motivational imagery, pricing tables, and offer callouts. Designed as both a print flyer (CMYK) and a digital version (RGB) for WhatsApp and email distribution."
+             data-client="FitPulse Fitness Studio"
+             data-tools="Adobe Photoshop, Illustrator"
+             data-tags="Flyer,Print,A4,WhatsApp Creatives,Promotions"
+             data-img="images/print-fitpulse-flyer.jpg"
+             data-ph-gradient="linear-gradient(135deg,#7f1d1d,#f97316)"
+             data-ph-icon="fas fa-dumbbell"
+             data-ph-title="FitPulse — Gym Membership Flyer"
+             data-ph-sub="A4 Flyer · CMYK &amp; Digital Versions">
+          <div class="p-card-img">
+            <img src="images/print-fitpulse-flyer.jpg" alt="FitPulse Flyer" loading="lazy"
+                 onerror="this.parentElement.innerHTML=buildPlaceholder(this.closest('.p-card'))">
+            <div class="p-card-hover-overlay">
+              <div class="view-icon"><i class="fas fa-expand-alt"></i></div>
+              <span class="view-label">View Project</span>
+            </div>
+          </div>
+          <div class="p-card-body">
+            <span class="p-card-badge badge-print"><i class="fas fa-print"></i> Print &amp; Collateral</span>
+            <h3 class="p-card-title">FitPulse — Gym Membership Flyer</h3>
+            <p class="p-card-desc">Bold A4 membership drive flyer with pricing tables for print & digital distribution.</p>
+          </div>
+        </div>
+
+        <!-- 17 -->
+        <div class="p-card" data-category="print"
+             data-title="EduReach – Outdoor Event Banner"
+             data-cat-label="Print &amp; Collateral"
+             data-badge="badge-print"
+             data-desc="Large-format outdoor flex banner series for EduReach Academy's annual admission season. Designed three banner variants (6×3 ft, 10×4 ft, and hoarding size) with strong visual hierarchy, student testimonial overlays, and QR code call-to-action. Prepared as high-resolution files for outdoor printing vendors."
+             data-client="EduReach Academy"
+             data-tools="CorelDRAW, Adobe Photoshop"
+             data-tags="Banner,Outdoor,Large Format,Flex Print,Admissions"
+             data-img="images/print-edureach-banner.jpg"
+             data-ph-gradient="linear-gradient(135deg,#134e4a,#0284c7)"
+             data-ph-icon="fas fa-rectangle-ad"
+             data-ph-title="EduReach — Outdoor Admission Banners"
+             data-ph-sub="Flex Banners · 3 Sizes · High-Resolution Print">
+          <div class="p-card-img">
+            <img src="images/print-edureach-banner.jpg" alt="EduReach Banner" loading="lazy"
+                 onerror="this.parentElement.innerHTML=buildPlaceholder(this.closest('.p-card'))">
+            <div class="p-card-hover-overlay">
+              <div class="view-icon"><i class="fas fa-expand-alt"></i></div>
+              <span class="view-label">View Project</span>
+            </div>
+          </div>
+          <div class="p-card-body">
+            <span class="p-card-badge badge-print"><i class="fas fa-print"></i> Print &amp; Collateral</span>
+            <h3 class="p-card-title">EduReach — Outdoor Admission Banners</h3>
+            <p class="p-card-desc">Large-format outdoor flex banners in 3 sizes with student testimonials and QR CTAs.</p>
+          </div>
+        </div>
+
+        <!-- 18 -->
+        <div class="p-card" data-category="print"
+             data-title="ZenBrew – Full Stationery Suite"
+             data-cat-label="Print &amp; Collateral"
+             data-badge="badge-print"
+             data-desc="Comprehensive business stationery package for ZenBrew Café: double-sided business cards with matte lamination finish, A4 letterhead, compliment slips, branded envelopes, and invoice template. Designed with warm earthy brand tones for consistent professional communication."
+             data-client="ZenBrew Café"
+             data-tools="Adobe Illustrator, InDesign"
+             data-tags="Business Cards,Stationery,Letterhead,Brand Collateral"
+             data-img="images/print-zenbrew-stationery.jpg"
+             data-ph-gradient="linear-gradient(135deg,#451a03,#92400e)"
+             data-ph-icon="fas fa-id-card"
+             data-ph-title="ZenBrew — Full Stationery Suite"
+             data-ph-sub="Business Cards · Letterhead · Invoice Template">
+          <div class="p-card-img">
+            <img src="images/print-zenbrew-stationery.jpg" alt="ZenBrew Stationery" loading="lazy"
+                 onerror="this.parentElement.innerHTML=buildPlaceholder(this.closest('.p-card'))">
+            <div class="p-card-hover-overlay">
+              <div class="view-icon"><i class="fas fa-expand-alt"></i></div>
+              <span class="view-label">View Project</span>
+            </div>
+          </div>
+          <div class="p-card-body">
+            <span class="p-card-badge badge-print"><i class="fas fa-print"></i> Print &amp; Collateral</span>
+            <h3 class="p-card-title">ZenBrew — Full Stationery Suite</h3>
+            <p class="p-card-desc">Business cards, letterhead, envelopes & invoice template — complete print stationery suite.</p>
+          </div>
+        </div>
+
+        <!-- Empty state -->
+        <div class="empty-state" id="emptyState">
+          <i class="fas fa-search"></i>
+          <h3>No projects found</h3>
+          <p>Try selecting a different category filter.</p>
+        </div>
+
+      </div><!-- /portfolio-grid -->
+    </div><!-- /container -->
+  </section>
+
+  <!-- ========== CTA STRIP ========== -->
+  <section class="cta-strip">
+    <div class="container">
+      <span class="section-tag">Let's Create Together</span>
+      <h2>Have a Project in Mind?</h2>
+      <p>From logo to launch — I bring creative vision and 12+ years of experience to every brief. Let's make something unforgettable.</p>
+      <div class="cta-strip-btns">
+        <a href="index.html#contact" class="btn btn-gold">
+          <i class="fas fa-paper-plane"></i> Start a Project
+        </a>
+        <a href="https://wa.me/919818706594" target="_blank" class="btn btn-white">
+          <i class="fab fa-whatsapp"></i> WhatsApp Me
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-name">KAM <span>THE</span> DESIGNER</div>
+          <div class="footer-tagline">Designs That Speak Loudly</div>
+          <p class="footer-desc">Professional graphic design services — branding, print, digital, packaging and more. 12+ years of creative excellence serving businesses across India.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/kam_the_designer" target="_blank" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/kam-the-designer" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/919818706594" target="_blank" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="portfolio.html">Full Portfolio</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="index.html#services">Logo &amp; Branding</a></li>
+            <li><a href="index.html#services">Social Media Design</a></li>
+            <li><a href="index.html#services">Packaging Design</a></li>
+            <li><a href="index.html#services">Print &amp; Collateral</a></li>
+            <li><a href="index.html#services">Event Branding</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Kam The Designer. All Rights Reserved.</p>
+        <p class="credit">Designed with <span>❤️</span> by Kam The Designer</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== FLOATING BUTTONS ========== -->
+  <div class="float-btns">
+    <a href="https://wa.me/919818706594" target="_blank" class="float-btn float-wa" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="index.html#contact" class="float-btn float-hire" aria-label="Hire Me">HIRE<br>ME</a>
+    <button class="float-btn float-top" id="scrollTop" aria-label="Scroll to top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+  </div>
+
+  <!-- ========== LIGHTBOX MODAL ========== -->
+  <div class="lightbox-overlay" id="lightboxOverlay" role="dialog" aria-modal="true" aria-label="Project detail">
+    <div class="lightbox-card" id="lightboxCard">
+      <div class="lightbox-img-wrap" id="lightboxImgWrap">
+        <!-- image injected by JS -->
+      </div>
+      <div class="lightbox-body">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="fas fa-times"></i></button>
+        <span class="lightbox-badge" id="lightboxBadge"></span>
+        <h2 class="lightbox-title" id="lightboxTitle"></h2>
+        <p class="lightbox-desc" id="lightboxDesc"></p>
+        <div class="lightbox-meta" id="lightboxMeta"></div>
+        <div class="lightbox-tags" id="lightboxTags"></div>
+        <div class="lightbox-actions">
+          <a href="index.html#contact" class="btn btn-primary btn-sm" style="font-size:0.78rem;padding:10px 22px;">
+            <i class="fas fa-paper-plane"></i> Hire Me
+          </a>
+          <a href="https://wa.me/919818706594" target="_blank" class="btn btn-outline" style="font-size:0.78rem;padding:10px 22px;">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+        <div class="lightbox-nav">
+          <button class="lightbox-nav-btn" id="lightboxPrev"><i class="fas fa-arrow-left"></i> Previous</button>
+          <button class="lightbox-nav-btn" id="lightboxNext">Next <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  /* ======================================================
+     PORTFOLIO PAGE — JAVASCRIPT
+  ====================================================== */
+
+  // ── Placeholder builder (called by onerror on images) ──
+  function buildPlaceholder(card) {
+    const grad   = card.dataset.phGradient  || 'linear-gradient(135deg,#000066,#3B82F6)';
+    const icon   = card.dataset.phIcon      || 'fas fa-image';
+    const title  = card.dataset.phTitle     || card.dataset.title || 'Project';
+    const sub    = card.dataset.phSub       || '';
+    return `<div class="p-card-placeholder" style="background:${grad};color:#fff">
+              <i class="${icon}"></i>
+              <span class="ph-title">${title}</span>
+              ${sub ? `<span class="ph-sub">${sub}</span>` : ''}
+            </div>`;
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+
+    // ── Footer year ──
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ── Scroll-to-top button ──
+    const scrollTopBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
+    }, { passive: true });
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // ──────────────────────────────────────────────
+    // FILTER SYSTEM
+    // ──────────────────────────────────────────────
+    const allCards      = Array.from(document.querySelectorAll('.p-card'));
+    const filterBtns    = document.querySelectorAll('.filter-btn');
+    const visibleCount  = document.getElementById('visibleCount');
+    const emptyState    = document.getElementById('emptyState');
+
+    // Count per category
+    const counts = { all:0, branding:0, social:0, packaging:0, print:0 };
+    allCards.forEach(c => {
+      counts.all++;
+      const cat = c.dataset.category;
+      if (counts[cat] !== undefined) counts[cat]++;
+    });
+    Object.keys(counts).forEach(k => {
+      const el = document.getElementById('cnt-' + k);
+      if (el) el.textContent = counts[k];
+    });
+
+    let currentFilter = 'all';
+    let visibleCards  = [...allCards]; // tracks what is currently shown (for lightbox nav)
+
+    function applyFilter(filter) {
+      currentFilter = filter;
+      let visible = 0;
+
+      allCards.forEach(card => {
+        const match = filter === 'all' || card.dataset.category === filter;
+        card.classList.toggle('hidden', !match);
+        if (match) visible++;
+      });
+
+      visibleCards = allCards.filter(c => !c.classList.contains('hidden'));
+      visibleCount.textContent = visible;
+      emptyState.classList.toggle('show', visible === 0);
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function () {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        applyFilter(this.dataset.filter);
+      });
+    });
+
+    // ──────────────────────────────────────────────
+    // LIGHTBOX
+    // ──────────────────────────────────────────────
+    const overlay       = document.getElementById('lightboxOverlay');
+    const lbImgWrap     = document.getElementById('lightboxImgWrap');
+    const lbBadge       = document.getElementById('lightboxBadge');
+    const lbTitle       = document.getElementById('lightboxTitle');
+    const lbDesc        = document.getElementById('lightboxDesc');
+    const lbMeta        = document.getElementById('lightboxMeta');
+    const lbTags        = document.getElementById('lightboxTags');
+    const lbClose       = document.getElementById('lightboxClose');
+    const lbPrev        = document.getElementById('lightboxPrev');
+    const lbNext        = document.getElementById('lightboxNext');
+
+    let currentIndex = 0;
+
+    function openLightbox(card) {
+      currentIndex = visibleCards.indexOf(card);
+      populateLightbox(card);
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function populateLightbox(card) {
+      const d = card.dataset;
+
+      // Image
+      const imgSrc = card.querySelector('img') ? card.querySelector('img').src : '';
+      if (imgSrc && !imgSrc.includes('placeholder')) {
+        lbImgWrap.innerHTML = `<img src="${imgSrc}" alt="${d.title}" onerror="this.parentElement.innerHTML=buildLbPlaceholder(${JSON.stringify(d.phGradient||'')}, ${JSON.stringify(d.phIcon||'')}, ${JSON.stringify(d.phTitle||'')})">`;
+      } else {
+        lbImgWrap.innerHTML = buildLbPlaceholder(d.phGradient, d.phIcon, d.phTitle);
+      }
+
+      // Badge
+      lbBadge.innerHTML = `<span class="p-card-badge ${d.badge}"><i class="${badgeIcon(d.badge)}"></i> ${d.catLabel}</span>`;
+      // Title & desc
+      lbTitle.innerHTML = d.title;
+      lbDesc.textContent = d.desc;
+
+      // Meta
+      let metaHtml = '';
+      if (d.client) metaHtml += `<div class="lightbox-meta-item"><i class="fas fa-user-tie"></i><span><strong>Client:</strong> ${d.client}</span></div>`;
+      if (d.tools)  metaHtml += `<div class="lightbox-meta-item"><i class="fas fa-tools"></i><span><strong>Tools:</strong> ${d.tools}</span></div>`;
+      lbMeta.innerHTML = metaHtml;
+
+      // Tags
+      const tags = (d.tags || '').split(',').filter(Boolean);
+      lbTags.innerHTML = tags.map(t => `<span class="lightbox-tag">${t.trim()}</span>`).join('');
+
+      // Nav buttons
+      lbPrev.disabled = currentIndex === 0;
+      lbNext.disabled = currentIndex === visibleCards.length - 1;
+    }
+
+    function buildLbPlaceholder(grad, icon, title) {
+      grad  = grad  || 'linear-gradient(135deg,#000066,#3B82F6)';
+      icon  = icon  || 'fas fa-image';
+      title = title || 'Project';
+      return `<div class="lightbox-img-placeholder" style="background:${grad};color:#fff">
+                <i class="${icon}"></i><span>${title}</span>
+              </div>`;
+    }
+
+    function badgeIcon(badgeClass) {
+      const map = { 'badge-branding':'fas fa-fingerprint', 'badge-social':'fas fa-hashtag', 'badge-packaging':'fas fa-box-open', 'badge-print':'fas fa-print' };
+      return map[badgeClass] || 'fas fa-tag';
+    }
+
+    // Open on card click
+    allCards.forEach(card => {
+      card.addEventListener('click', () => openLightbox(card));
+      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openLightbox(card); });
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('role', 'button');
+      card.setAttribute('aria-label', 'View project: ' + (card.dataset.title || 'Project'));
+    });
+
+    // Close
+    lbClose.addEventListener('click', closeLightbox);
+    overlay.addEventListener('click', e => { if (e.target === overlay) closeLightbox(); });
+    document.addEventListener('keydown', e => {
+      if (!overlay.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') navigateLightbox(1);
+      if (e.key === 'ArrowLeft')  navigateLightbox(-1);
+    });
+
+    // Navigate
+    lbPrev.addEventListener('click', () => navigateLightbox(-1));
+    lbNext.addEventListener('click', () => navigateLightbox(1));
+
+    function navigateLightbox(dir) {
+      const next = currentIndex + dir;
+      if (next < 0 || next >= visibleCards.length) return;
+      currentIndex = next;
+      populateLightbox(visibleCards[currentIndex]);
+      // Scroll lightbox card to top
+      document.getElementById('lightboxCard').scrollTop = 0;
+    }
+
+    // ──────────────────────────────────────────────
+    // ENTRANCE ANIMATIONS
+    // ──────────────────────────────────────────────
+    if ('IntersectionObserver' in window) {
+      const animEls = document.querySelectorAll('.p-card');
+      animEls.forEach((el, i) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(28px)';
+        el.style.transition = `opacity 0.5s ease ${(i % 6) * 0.07}s, transform 0.5s ease ${(i % 6) * 0.07}s`;
+      });
+
+      const animObs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            animObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      animEls.forEach(el => animObs.observe(el));
+    }
+
+  }); // DOMContentLoaded
+  </script>
 </body>
 </html>
