@@ -368,6 +368,158 @@
       position: relative;
       z-index: 2;
       padding: 120px 0 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-text {
+      /* left column */
+    }
+
+    /* ──────────────────────────────
+       HERO LOGO (right side)
+    ────────────────────────────── */
+    .hero-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      /* fade + slide in from right */
+      animation: heroLogoEnter 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+    }
+
+    @keyframes heroLogoEnter {
+      from {
+        opacity: 0;
+        transform: translateX(60px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .hero-logo-glow {
+      position: absolute;
+      inset: -20%;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center,
+          rgba(245, 158, 11, 0.18) 0%,
+          rgba(59, 130, 246, 0.12) 50%,
+          transparent 75%);
+      animation: glowPulse 4s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes glowPulse {
+
+      0%,
+      100% {
+        opacity: 0.7;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.08);
+      }
+    }
+
+    .hero-logo-ring {
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(245, 158, 11, 0.25);
+      animation: ringRotate 12s linear infinite;
+    }
+
+    .hero-logo-ring::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 12px var(--gold);
+    }
+
+    @keyframes ringRotate {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .hero-logo-img-wrap {
+      position: relative;
+      width: min(380px, 90%);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow:
+        0 0 0 1px rgba(245, 158, 11, 0.15),
+        0 24px 64px rgba(0, 0, 80, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-logo-img-wrap img {
+      width: 80%;
+      height: 80%;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 32px rgba(245, 158, 11, 0.35));
+    }
+
+    /* Fallback designer badge when logo image missing */
+    .hero-logo-fallback {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .hero-logo-fallback .fallback-icon {
+      font-size: 5rem;
+      color: var(--gold);
+      line-height: 1;
+      filter: drop-shadow(0 4px 16px rgba(245, 158, 11, 0.5));
+    }
+
+    .hero-logo-fallback .fallback-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.3rem;
+      letter-spacing: 0.06em;
+      color: var(--white);
+    }
+
+    .hero-logo-fallback .fallback-name span {
+      color: var(--gold);
+    }
+
+    .hero-logo-fallback .fallback-sub {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.55);
     }
 
     .hero-eyebrow {
@@ -429,17 +581,19 @@
 
     .hero-sub {
       font-size: 1.15rem;
-      color: rgba(255, 255, 255, 0.75);
-      max-width: 560px;
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 520px;
       margin-bottom: 44px;
-      line-height: 1.7;
+      line-height: 1.75;
+      letter-spacing: 0.01em;
     }
 
     .hero-ctas {
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
-      margin-bottom: 60px;
+      margin-bottom: 56px;
+      align-items: center;
     }
 
     .hero-stats {
@@ -1563,6 +1717,20 @@
    RESPONSIVE
 ============================== */
     @media (max-width: 1024px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        text-align: left;
+      }
+
+      .hero-logo {
+        order: -1;
+      }
+
+      .hero-logo-img-wrap {
+        width: min(280px, 65%);
+      }
+
       .skills-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -1621,6 +1789,20 @@
       .nav-links a {
         font-size: 1.1rem;
         padding: 12px 24px;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        padding: 110px 0 70px;
+        gap: 40px;
+      }
+
+      .hero-logo {
+        order: -1;
+      }
+
+      .hero-logo-img-wrap {
+        width: min(240px, 70%);
       }
 
       .hero h1 {
@@ -1738,37 +1920,51 @@
 
     <div class="container">
       <div class="hero-content">
-        <div class="hero-eyebrow">
-          <i class="fas fa-palette"></i>&nbsp; Graphic Designer &amp; Brand Identity Expert
-        </div>
-        <h1>
-          Designs That<br>
-          <span class="gold">Speak</span> <span class="accent">Loudly</span>
-        </h1>
-        <p class="hero-sub">From Imagination to Impact – Creative Graphic Design that Delivers results, builds trust,
-          and makes your brand unforgettable.</p>
-        <div class="hero-ctas">
-          <a href="#contact" class="btn btn-gold">
-            <i class="fas fa-paper-plane"></i> Let's Work Together
-          </a>
-          <a href="#portfolio" class="btn btn-white">
-            <i class="fas fa-eye"></i> View Portfolio
-          </a>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <span class="num">12+</span>
-            <span class="label">Years Experience</span>
+        <!-- LEFT: Text content -->
+        <div class="hero-text">
+          <div class="hero-eyebrow">
+            <i class="fas fa-palette"></i>&nbsp; Graphic Designer &amp; Brand Identity Expert
           </div>
-          <div class="hero-stat">
-            <span class="num">500+</span>
-            <span class="label">Projects Done</span>
+          <h1>
+            Designs That<br>
+            <span class="gold">Speak</span> <span class="accent">Loudly</span>
+          </h1>
+          <p class="hero-sub">From Imagination to Impact – Creative Graphic Design that Delivers results, builds trust,
+            and makes your brand unforgettable.</p>
+          <div class="hero-ctas">
+            <a href="#contact" class="btn btn-gold">
+              <i class="fas fa-paper-plane"></i> Let's Work Together
+            </a>
+            <a href="#portfolio" class="btn btn-white">
+              <i class="fas fa-eye"></i> View Portfolio
+            </a>
           </div>
-          <div class="hero-stat">
-            <span class="num">100+</span>
-            <span class="label">Happy Clients</span>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="num">12+</span>
+              <span class="label">Years Experience</span>
+            </div>
+            <div class="hero-stat">
+              <span class="num">500+</span>
+              <span class="label">Projects Done</span>
+            </div>
+            <div class="hero-stat">
+              <span class="num">100+</span>
+              <span class="label">Happy Clients</span>
+            </div>
           </div>
         </div>
+
+        <!-- RIGHT: Logo / Brand Visual -->
+        <div class="hero-logo" aria-hidden="true">
+          <div class="hero-logo-glow"></div>
+          <div class="hero-logo-ring"></div>
+          <div class="hero-logo-img-wrap">
+            <img src="Kam The Designer - Logo.png" alt="Kam The Designer Logo"
+              onerror="this.parentElement.innerHTML='<div class=\'hero-logo-fallback\'><i class=\'fas fa-pen-nib fallback-icon\'></i><div class=\'fallback-name\'>KAM <span>THE</span> DESIGNER</div><div class=\'fallback-sub\'>Graphic Designer &amp; Brand Identity Expert</div></div>'" />
+          </div>
+        </div>
+
       </div>
     </div>
     <div class="scroll-indicator">
@@ -2230,8 +2426,9 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="footer-brand-name">KAM <span>THE</span> DESIGNER</div>
-          <div class="footer-tagline">Designs That Speak Loudly</div>
+          <a href="#home" class="logo-text">
+            <img src="Kam The Designer - Logo.png" alt="KTD Logo" class="logoktd">
+          </a>
           <p class="footer-desc">Professional graphic design services — branding, print, digital, packaging and more.
             12+ years of creative excellence serving businesses across India.</p>
           <div class="footer-social">
